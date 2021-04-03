@@ -254,6 +254,7 @@ body {
 .pets {
   max-width: 1160px;
   margin: 0 auto;
+  margin-bottom: 65px;
 }
 
 .pets__slider {
@@ -342,5 +343,52 @@ body {
 }
 
 /* paynfeed styles start */
+
+.paynfeed {
+  max-width: 1050px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.paynfeed__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paynfeed__element {
+  position: relative;
+  width: 320px;
+  height: 276px;
+  background: url("../../assets/images/paynfeed-background.png") center
+    no-repeat;
+}
+
+.paynfeed__img {
+  position: absolute;
+  top: 60px;
+  left: 90px;
+}
+
+.paynfeed__img-panda {
+  position: absolute;
+  top: 65px;
+  left: 100px;
+}
+
+.paynfeed__descr {
+  margin: 0;
+  padding-top: 256px;
+  max-width: 320px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.paynfeed__arrows {
+  position: absolute;
+  left: 210px;
+  top: -50px;
+}
 
 /* paynfeed styles end */
