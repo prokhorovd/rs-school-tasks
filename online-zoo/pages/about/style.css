@@ -53,14 +53,19 @@ body {
 }
 
 .header__nav-activelink {
-  text-decoration: none;
   -webkit-text-stroke: 1px #70cb0e;
 }
 
-.header__nav-link:hover {
+.header__nav-link:hover,
+.header__nav-link:focus {
   transition: 0.4s;
   opacity: 0.7;
   color: grey;
+}
+
+.header__nav-link:active {
+  transition: 0.4s;
+  -webkit-text-stroke: 1px #70cb0e;
 }
 
 /* header styles end */
