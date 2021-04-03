@@ -14,47 +14,63 @@
     <title>Online Zoo - About</title>
   </head>
   <body>
-    <!-- header -->
-    <header class="header">
-      <div class="header__logo">
-        <a href="./index.html" class="header__logo-link">
+    <div class="top-background">
+      <!-- header -->
+      <header class="header">
+        <div class="header__logo">
+          <a href="./index.html" class="header__logo-link">
+            <img
+              src="../../assets/images/logo-online-zoo.svg"
+              alt="online zoo logo"
+              class="header__logo-img"
+            />
+          </a>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-element">
+              <a
+                href="./index.html"
+                class="header__nav-link header__nav-activelink"
+                >About</a
+              >
+            </li>
+            <li class="header__nav-element">
+              <a href="../map/" class="header__nav-link">Map</a>
+            </li>
+            <li class="header__nav-element">
+              <a href="#" class="header__nav-link">Zoos</a>
+            </li>
+            <li class="header__nav-element">
+              <a href="../error/" class="header__nav-link">Contact us</a>
+            </li>
+            <li class="header__nav-element">
+              <a
+                href="https://www.figma.com/file/aBvQMVmI665DtzprpiniuH/online-zoo?node-id=0%3A1"
+                class="header__nav-link"
+                target="_blank"
+                >Design</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <h1 class="page-heading">Online Zoo</h1>
+      </header>
+      <!-- watch your favorite animal online -->
+      <section class="intro">
+        <h2 class="intro__heading">Watch your favorite animal ONLINE</h2>
+        <button
+          class="intro__button"
+          onclick="window.location.href='../zoos/panda/';"
+        >
           <img
-            src="../../assets/images/logo-online-zoo.svg"
-            alt="online zoo logo"
-            class="header__logo-img"
+            src="../../assets/icons/intro-play-ico.png"
+            alt=""
+            class="intro__button-img"
           />
-        </a>
-      </div>
-      <nav class="header__nav">
-        <ul class="header__nav-list">
-          <li class="header__nav-element">
-            <a
-              href="./index.html"
-              class="header__nav-link header__nav-activelink"
-              >About</a
-            >
-          </li>
-          <li class="header__nav-element">
-            <a href="../map/" class="header__nav-link">Map</a>
-          </li>
-          <li class="header__nav-element">
-            <a href="#" class="header__nav-link">Zoos</a>
-          </li>
-          <li class="header__nav-element">
-            <a href="../error/" class="header__nav-link">Contact us</a>
-          </li>
-          <li class="header__nav-element">
-            <a
-              href="https://www.figma.com/file/aBvQMVmI665DtzprpiniuH/online-zoo?node-id=0%3A1"
-              class="header__nav-link"
-              target="_blank"
-              >Design</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <h1 class="page-heading">Online Zoo</h1>
-    </header>
-    <!-- watch your favorite animal online -->
+        </button>
+      </section>
+    </div>
+    <!-- how it works -->
   </body>
 </html>
