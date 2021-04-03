@@ -144,6 +144,7 @@ body {
 
 .header__nav-activelink {
   -webkit-text-stroke: 1px #70cb0e;
+  pointer-events: none;
 }
 
 .header__nav-link:hover,

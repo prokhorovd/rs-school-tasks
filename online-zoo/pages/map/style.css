@@ -87,6 +87,7 @@ body {
 }
 
 .header__nav-activelink {
+  pointer-events: none;
   -webkit-text-stroke: 1px #70cb0e;
 }
 
