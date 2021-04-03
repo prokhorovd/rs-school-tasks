@@ -23,6 +23,33 @@ body {
   src: url(../../assets/fonts/scenew01.ttf);
 }
 
+/* reusable elements */
+
+.button {
+  width: 233px;
+  height: 51px;
+  background: #70cb0e;
+  border-style: none;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  margin-bottom: 135px;
+}
+
+.button:hover,
+.button:focus {
+  transition: 0.4s;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.button:active {
+  opacity: 1;
+  border-style: none;
+  background: #5fac0c;
+  cursor: pointer;
+}
+
 /* top background */
 
 .top-background {
@@ -114,27 +141,6 @@ body {
 
 .intro__button {
   width: 233px;
-  height: 51px;
-  background: #70cb0e;
-  border-style: none;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  margin-bottom: 135px;
-}
-
-.intro__button:hover,
-.intro__button:focus {
-  transition: 0.4s;
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.intro__button:active {
-  opacity: 1;
-  border-style: none;
-  background: #5fac0c;
-  cursor: pointer;
 }
 
 /* intro styles end */
