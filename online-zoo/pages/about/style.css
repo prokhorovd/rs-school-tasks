@@ -549,6 +549,7 @@ body {
 }
 
 .footer__menu-link {
+  transition: 0.4s;
   text-decoration: none;
   color: #000;
 }
@@ -557,6 +558,11 @@ body {
 .footer__menu-link:focus {
   transition: 0.4s;
   color: #5fac0c;
+}
+
+.footer__menu-link:active {
+  transition: 0.2s;
+  color: #396806;
 }
 
 .footer__social {
