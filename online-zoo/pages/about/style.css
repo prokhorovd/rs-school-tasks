@@ -18,9 +18,15 @@ body {
   font-weight: normal;
 }
 
+@font-face {
+  font-family: SceneW01;
+  src: url(../../assets/fonts/scenew01.ttf);
+}
+
 /* header styles start */
 
 .header {
+  position: relative;
   max-width: 1160px;
   margin: 0 auto;
   display: flex;
@@ -68,4 +74,16 @@ body {
   -webkit-text-stroke: 1px #70cb0e;
 }
 
+.page-heading {
+  position: absolute;
+  margin: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 /* header styles end */
+
+/* intro styles start */
+
+/* intro styles end */
