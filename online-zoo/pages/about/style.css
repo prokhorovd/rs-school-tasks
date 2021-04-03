@@ -74,6 +74,7 @@ body {
   transition: 0.4s;
   transform: scale(0.9);
   opacity: 0.7;
+  cursor: pointer;
 }
 
 .slider-arrow:active {
@@ -348,6 +349,7 @@ body {
   max-width: 1050px;
   position: relative;
   margin: 0 auto;
+  margin-bottom: 180px;
 }
 
 .paynfeed__wrapper {
@@ -358,7 +360,6 @@ body {
 .paynfeed__element {
   position: relative;
   width: 320px;
-  height: 276px;
   background: url("../../assets/images/paynfeed-background.png") center
     no-repeat;
 }
@@ -392,3 +393,87 @@ body {
 }
 
 /* paynfeed styles end */
+
+/* testimonials styles start */
+
+.testimonials {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.testimonials__heading {
+  margin-bottom: 79px;
+}
+
+.testimonials__wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 369px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.testimonials__slider {
+  position: relative;
+  width: 992px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonials__element {
+  width: 233px;
+  height: 369px;
+  background-color: #a7e1ff;
+  position: relative;
+}
+
+.testimonials__photo {
+  position: relative;
+  top: 22px;
+  left: 20px;
+}
+
+.testimonials__name {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  position: absolute;
+  top: 30px;
+  left: 82px;
+}
+
+.testimonials__coin {
+  position: absolute;
+  top: 54px;
+  left: 82px;
+}
+
+.testimonials__donate {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  position: absolute;
+  top: 52px;
+  left: 97px;
+}
+
+.testimonials__content {
+  margin: 0;
+  max-width: 193px;
+  font-size: 16px;
+  line-height: 19px;
+  position: absolute;
+  top: 92px;
+  left: 20px;
+}
+
+.testimonials__button {
+  width: 246px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/* testimonials styles end */
