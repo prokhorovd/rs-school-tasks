@@ -573,6 +573,13 @@ body {
 .footer__social-ico {
   cursor: pointer;
   width: 40px;
+  transition: 0.4s;
+}
+
+.footer__social-ico:hover,
+.footer__social-ico:focus {
+  transition: 0.4s;
+  transform: scale(1.1);
 }
 
 .footer__row2 {
