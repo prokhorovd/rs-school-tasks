@@ -325,12 +325,12 @@ body {
   left: 69px;
 }
 
-.pets__slider-img {
+.pets__slider-element {
   transition: 0.4s;
 }
 
-.pets__slider-img:hover,
-.pets__slider-img:focus {
+.pets__slider-element:hover,
+.pets__slider-element:focus {
   transform: scale(1.1);
   cursor: pointer;
 }
