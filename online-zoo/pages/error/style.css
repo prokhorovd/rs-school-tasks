@@ -1,0 +1,76 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Bebas Neue", cursive;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+@font-face {
+  font-family: SceneW01-Black;
+  src: url(../../assets/fonts/scenew01.ttf);
+}
+
+.page-heading {
+  position: absolute;
+  margin: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.pagenotfound {
+  max-width: 675px;
+  margin: 0 auto;
+  padding-top: 190px;
+}
+
+.pagenotfound__wrapper {
+  height: 558px;
+  background: url("../../assets/images/pagenotfound.png") center no-repeat;
+  margin-bottom: 30px;
+}
+
+.pagenotfound__text {
+  margin: 0;
+  padding-top: 6px;
+  font-family: SceneW01-Black;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 100px;
+  line-height: 125px;
+  text-align: center;
+  color: #fff;
+}
+
+.pagenotfound__header {
+  margin: 0;
+  text-transform: uppercase;
+
+  font-size: 70px;
+  line-height: 70px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.pagenotfound__caption {
+  margin: 0;
+  text-transform: uppercase;
+
+  font-size: 20px;
+  line-height: 20px;
+  color: #59c3fb;
+}
