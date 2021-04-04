@@ -247,7 +247,11 @@ body {
   z-index: 1;
 }
 
-.map__animal-tooltip-right::before {
+.map__animal-img .map__animal-tooltip-eagle {
+  width: 120px;
+}
+
+.map__animal-tooltip::before {
   content: "";
   position: absolute; /* Абсолютное позиционирование */
   right: 100px;
@@ -256,19 +260,8 @@ body {
   border-right: 8px solid #70cb0e; /* Добавляем треугольник */
 }
 
-.map__animal-tooltip-left::after {
-  content: "";
-  position: absolute; /* Абсолютное позиционирование */
-  left: 100px;
-  top: 14px; /* Положение треугольника */
-  border: 8px solid transparent; /* Прозрачные границы */
-  border-left: 8px solid #70cb0e; /* Добавляем треугольник */
-}
-
-.map__animal-img .map__animal-tooltip-left {
-  width: 100px;
-  top: 8.5px;
-  left: -110px;
+.map__animal-tooltip-eagle::before {
+  right: 120px;
 }
 
 .map__animal-img:hover .map__animal-tooltip {
@@ -276,22 +269,22 @@ body {
 }
 
 .map__animal-img-eagle {
-  background: url(../../assets/images/map-eagle-full.jpg) no-repeat 0px -15px; /* Параметры фона */
-  background-size: auto 110px; /* Высота фотографии равна высоте элемента */
+  background: url(../../assets/images/map-eagle-full.jpg) no-repeat 0px -15px;
+  background-size: auto 110px;
   margin-right: 0;
   margin-left: 8px;
 }
 .map__animal-img-alligator {
-  background: url(../../assets/images/map-alligator-full.jpg) no-repeat -10px -8px; /* Параметры фона */
-  background-size: auto 80px; /* Высота фотографии равна высоте элемента */
+  background: url(../../assets/images/map-alligator-full.jpg) no-repeat -10px -8px;
+  background-size: auto 80px;
 }
 .map__animal-img-gorilla {
-  background: url(../../assets/images/map-gorilla-full.jpg) no-repeat -25px -5px; /* Параметры фона */
-  background-size: auto 80px; /* Высота фотографии равна высоте элемента */
+  background: url(../../assets/images/map-gorilla-full.jpg) no-repeat -25px -5px;
+  background-size: auto 80px;
 }
 .map__animal-img-panda {
-  background: url(../../assets/images/map-panda-full.jpg) no-repeat -8px -15px; /* Параметры фона */
-  background-size: auto 110px; /* Высота фотографии равна высоте элемента */
+  background: url(../../assets/images/map-panda-full.jpg) no-repeat -8px -15px;
+  background-size: auto 110px;
 }
 
 /* map styles end */
