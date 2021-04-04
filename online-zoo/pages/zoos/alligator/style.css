@@ -161,17 +161,128 @@ body {
   margin: 0 auto;
 }
 
+/* start sidebar */
+
 .animal__sidebar {
   width: 111px;
   height: 380px;
   background: url(../../../assets/images/sidebar-background.png) center
     no-repeat;
   margin-top: 50px;
-
   position: fixed;
   top: 237px;
   z-index: 2;
 }
+
+.animal__sidebar-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.animal__sidebar-element {
+  position: relative;
+  width: 64px;
+  height: 64px; /* Ширина и высота */
+  border-radius: 50%; /* Превращаем в круг */
+  border: 2px solid #fff;
+  margin-left: 20px;
+}
+.animal__sidebar-element:hover {
+  border: 2px solid #70cb0e;
+}
+
+.animal__sidebar-element:first-child {
+  margin-top: 13px;
+}
+.animal__sidebar-element:last-child {
+  margin-bottom: 13px;
+}
+
+.animal__sidebar-alligator {
+  background: url(../../../assets/images/map-alligator-full.jpg) no-repeat -10px -8px; /* Параметры фона */
+  background-size: auto 80px; /* Высота фотографии равна высоте элемента */
+}
+
+.animal__sidebar-gorilla {
+  background: url(../../../assets/images/map-gorilla-full.jpg) no-repeat -25px -5px; /* Параметры фона */
+  background-size: auto 80px; /* Высота фотографии равна высоте элемента */
+}
+.animal__sidebar-panda {
+  background: url(../../../assets/images/map-panda-full.jpg) no-repeat -8px -15px; /* Параметры фона */
+  background-size: auto 110px; /* Высота фотографии равна высоте элемента */
+}
+
+.animal__sidebar-eagle {
+  background: url(../../../assets/images/map-eagle-full.jpg) no-repeat 0px -15px; /* Параметры фона */
+  background-size: auto 110px; /* Высота фотографии равна высоте элемента */
+}
+.animal__sidebar-feed {
+  background: url(../../../assets/images/sidebar-panda.png) no-repeat 50% 75%; /* Параметры фона */
+  background-color: #70cb0e;
+  background-size: auto; /* Высота фотографии равна высоте элемента */
+  transition: 0.4s;
+}
+
+.animal__sidebar-feed:hover,
+.animal__sidebar-feed:focus {
+  background: url(../../../assets/images/sidebar-panda.png) no-repeat 50% 75%; /* Параметры фона */
+  background-color: #fff;
+  background-size: auto; /* Высота фотографии равна высоте элемента */
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+
+.animal__sidebar-feed:active {
+  background-color: goldenrod;
+}
+
+.animal__sidebar-element .animal__sidebar-tooltip {
+  visibility: hidden;
+  width: 100px;
+  height: 45px;
+  background-color: #70cb0e;
+  color: #000;
+  text-align: center;
+  padding: 4px 0;
+  position: absolute;
+  top: 8.5px;
+  left: 70px;
+  z-index: 1;
+}
+
+.animal__sidebar-element .animal__sidebar-tooltip-eagle {
+  width: 115px;
+}
+
+.animal__sidebar-element .animal__sidebar-tooltip-panda {
+  width: 95px;
+}
+
+.animal__sidebar-element:hover .animal__sidebar-tooltip {
+  visibility: visible;
+}
+
+.animal__sidebar-tooltip::before {
+  content: "";
+  position: absolute; /* Абсолютное позиционирование */
+  left: -15px;
+  top: 14px; /* Положение треугольника */
+  border: 8px solid transparent; /* Прозрачные границы */
+  border-right: 8px solid #70cb0e; /* Добавляем треугольник */
+}
+
+.animal__sidebar-active .animal__sidebar-tooltip {
+  visibility: visible;
+  pointer-events: none;
+}
+.animal__sidebar-active {
+  border: 2px solid #70cb0e;
+  pointer-events: none;
+}
+
+/* end sidebar */
 
 .animal__wrapper {
   max-width: 1160px;
