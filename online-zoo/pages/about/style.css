@@ -227,10 +227,6 @@ body {
 }
 
 .slider-panda {
-  transform: scale(1.4, 1.3);
-}
-
-.slider-panda {
   position: relative;
   transform: scale(1.4, 1.3);
   z-index: 3;
