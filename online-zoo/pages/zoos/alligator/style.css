@@ -17,7 +17,6 @@ body {
   font-style: normal;
   font-weight: normal;
   position: relative;
-  /* height: 1295px; */
 }
 
 /* reusable elements */
@@ -59,37 +58,38 @@ body {
   margin-bottom: 80px;
 }
 
-.slider-arrow {
-  width: 63px;
-  height: 63px;
-  background: url("../../assets/icons/arrow-ellipse.svg") center no-repeat;
+.accordeon-arrow {
+  width: 45px;
+  height: 45px;
+  background: url("../../../assets/icons/accordeon-arrow-ellipse.svg") center
+    no-repeat;
   position: relative;
 }
 
-.slider-arrow:hover,
-.slider-arrow:focus {
+.accordeon-arrow:hover,
+.accordeon-arrow:focus {
   transition: 0.4s;
   transform: scale(0.9);
   opacity: 0.7;
   cursor: pointer;
 }
 
-.slider-arrow:active {
+.accordeon-arrow:active {
   transition: 0.4s;
   transform: scale(0.9);
   opacity: 1;
 }
 
-.arrow-left-ico {
+.accordeon-up-ico {
   position: absolute;
   top: 17px;
-  left: 23px;
+  left: 12px;
 }
 
-.arrow-right-ico {
+.accordeon--down-ico {
   position: absolute;
   top: 17px;
-  left: 27px;
+  left: 12px;
 }
 
 /* header styles start */
@@ -174,7 +174,6 @@ body {
 }
 
 .animal__wrapper {
-  min-height: 2000px;
   max-width: 1160px;
   margin: 0 auto;
 }
@@ -186,9 +185,71 @@ body {
 .animals__video-grid {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 25px;
 }
 
 /* animal styles end */
+
+/* information styles start */
+.information {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  height: 757px;
+}
+
+.information__summary {
+  height: 61px;
+  background-color: #a7e1ff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.information__summary-text {
+  padding-left: 20px;
+  padding-top: 20px;
+  margin: 0;
+  line-height: 19px;
+}
+
+.information__accordeon {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.information__accordeon-element {
+  padding: 20px 20px;
+  background-color: #a7e1ff;
+  height: 142px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.information__accordeon-text-wrapper {
+  max-width: 470px;
+}
+
+.information__accordeon-heading {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 7px;
+}
+
+.information__accordeon-content {
+  margin: 0;
+  line-height: 19px;
+}
+
+.accordeon-arrow {
+  margin-top: 30px;
+}
+/* information styles end */
 
 /* footer styles start */
 
