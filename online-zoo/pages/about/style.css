@@ -332,6 +332,7 @@ body {
 .pets__slider-img:hover,
 .pets__slider-img:focus {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .pets__button {
