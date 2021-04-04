@@ -191,6 +191,7 @@ body {
 }
 .animal__sidebar-element:hover {
   border: 2px solid #70cb0e;
+  cursor: pointer;
 }
 
 .animal__sidebar-element:first-child {
@@ -232,6 +233,7 @@ body {
   background-size: auto; /* Высота фотографии равна высоте элемента */
   transition: 0.4s;
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .animal__sidebar-feed:active {
