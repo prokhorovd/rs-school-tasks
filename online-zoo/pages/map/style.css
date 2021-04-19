@@ -423,9 +423,9 @@ body {
     top: 83.7%;
   }
 
-  .map__animal-img:hover .map__animal-tooltip {
+  /* .map__animal-img:hover .map__animal-tooltip {
     visibility: hidden;
-  }
+  } */
 }
 
 /* map responsive 640px */
