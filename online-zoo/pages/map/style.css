@@ -556,7 +556,7 @@ body {
 /* footer styles start */
 
 .footer {
-  background: url(../../../assets/images/footer-background.png) no-repeat center;
+  background: url(../../assets/images/footer-background.png) no-repeat center;
   background-position: top -3px left 9px;
   height: 285px;
   width: 100%;
