@@ -130,7 +130,7 @@ body {
 
 @media screen and (min-width: 320px) and (max-width: 639px) {
   .header__logo {
-    margin-left: 3px;
+    margin-left: 0;
   }
 
   .header__nav {
@@ -141,7 +141,7 @@ body {
     display: block;
     position: absolute;
     top: 28px;
-    right: 10px;
+    right: 1px;
   }
 
   .header__nav_mobile:hover,
@@ -519,13 +519,13 @@ body {
 
   .map {
     height: 100%;
-    background-position-x: 105%;
+    background-position-x: 102%;
     background-size: auto 600px;
   }
 
   .map__geomark-alligator_small {
     top: 53.4%;
-    left: 39.3%;
+    left: 38.8%;
   }
 
   .map__geomark-gorilla_small {
@@ -533,7 +533,7 @@ body {
   }
 
   .map__element-alligator {
-    left: 42%;
+    left: 41.3%;
   }
 
   .map__element-gorilla {
@@ -542,11 +542,12 @@ body {
 
   .map__edrc {
     top: 67.5%;
-    left: 55%;
+    left: 54.2%;
   }
 
   .map__zoom-controller {
     top: 81%;
+    right: 3.7%;
   }
 }
 
