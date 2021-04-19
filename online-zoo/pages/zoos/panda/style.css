@@ -415,30 +415,6 @@ main {
 
 /* footer styles start */
 
-/* backup footer
-
-.footer {
-  width: 100%;
-  background-color: #dff5b0;
-  position: absolute;
-}
-
-.footer__background {
-  
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.footer__background-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -7.5%;
-}
-backup footer */
-
 .footer {
   background: url(../../../assets/images/footer-background.png) no-repeat center;
   height: 282px;
@@ -452,7 +428,6 @@ backup footer */
   background-color: #dff5b0;
   height: 267px;
   width: 100%;
-
 }
 
 .footer__wrapper {
@@ -551,21 +526,6 @@ backup footer */
   transition: 0.4s;
   transform: scale(1.1);
 }
-
-/* del
-.footer__row1 {
-  padding-top: 78px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer__row2 {
-  padding-top: 65px;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-*/
 .footer__logo-yem {
   margin-left: -32%;
 }
@@ -601,7 +561,8 @@ backup footer */
   .animal__sidebar-button {
     width: 45px;
     height: 45px;
-    background: url(../../../assets/icons/accordeon-arrow-ellipse.svg) center no-repeat;
+    background: url(../../../assets/icons/accordeon-arrow-ellipse.svg) center
+      no-repeat;
   }
 
   .animal__sidebar-button:hover,
@@ -627,7 +588,7 @@ backup footer */
     background-size: 100%;
     background-position: top 5px left 10px;
   }
-  
+
   .animal__sidebar-switcher {
     visibility: visible;
     position: fixed;
@@ -639,7 +600,8 @@ backup footer */
   .animal__sidebar-button {
     width: 45px;
     height: 45px;
-    background: url(../../../assets/icons/accordeon-arrow-ellipse.svg) center no-repeat;
+    background: url(../../../assets/icons/accordeon-arrow-ellipse.svg) center
+      no-repeat;
   }
 
   .animal__sidebar-button:hover,
@@ -691,7 +653,6 @@ backup footer */
 }
 
 @media screen and (max-width: 1199px) {
-  
   .header {
     margin-left: 13px;
   }
@@ -794,7 +755,6 @@ backup footer */
 }
 
 @media screen and (min-width: 641px) and (max-width: 985px) {
-
   .footer__wrapper {
     height: 359px;
     background-color: #dff5b0;
@@ -803,7 +763,6 @@ backup footer */
   .footer__content {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30%;
-
   }
 
   .footer__logo-container {
@@ -852,11 +811,11 @@ backup footer */
     padding-top: 0;
     top: 75%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
   }
 
   .footer__copyright {
-    margin:0;
+    margin: 0;
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
@@ -903,7 +862,6 @@ backup footer */
     background-size: 95%;
     background-position: top 6px left 23px;
   }
-  
 
   .footer__wrapper {
     height: 359px;
@@ -957,11 +915,11 @@ backup footer */
     padding-top: 0;
     top: 83%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
   }
 
   .footer__copyright {
-    margin:0;
+    margin: 0;
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
@@ -1061,7 +1019,7 @@ backup footer */
   .footer__nav {
     padding: 0;
     justify-self: center;
-    
+
     grid-column-start: 1;
     grid-column-end: 3;
   }
@@ -1087,7 +1045,7 @@ backup footer */
     margin-bottom: 47%;
   }
 
-  .footer__social{
+  .footer__social {
     padding: 0;
     width: 190px;
     grid-column-start: 1;
@@ -1236,11 +1194,11 @@ backup footer */
   .information__accordeon-text-wrapper {
     max-width: 200px;
   }
-  
-.footer {
-  background-size: 100%;
-  background-position: top 8px left -20px;
-}
+
+  .footer {
+    background-size: 100%;
+    background-position: top 8px left -20px;
+  }
 
   .footer__wrapper {
     height: 742px;
@@ -1280,7 +1238,7 @@ backup footer */
   .footer__nav {
     padding: 0;
     justify-self: center;
-    
+
     grid-column-start: 1;
     grid-column-end: 3;
   }
@@ -1306,7 +1264,7 @@ backup footer */
     margin-bottom: 47%;
   }
 
-  .footer__social{
+  .footer__social {
     padding: 0;
     width: 190px;
     grid-column-start: 1;
@@ -1358,5 +1316,4 @@ backup footer */
     top: 0;
     left: 0;
   }
-
 }

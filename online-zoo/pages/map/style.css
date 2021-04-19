@@ -17,7 +17,6 @@ body {
   font-style: normal;
   font-weight: normal;
   position: relative;
-  /* height: 1295px; */
   background: #a7e1ff;
 }
 
@@ -130,10 +129,6 @@ body {
 /* header responsive 320px*/
 
 @media screen and (min-width: 320px) and (max-width: 639px) {
-  /* .header {
-    margin-bottom: 77px;
-  } */
-
   .header__logo {
     margin-left: 3px;
   }
@@ -165,7 +160,6 @@ body {
   height: 930px;
   position: relative;
   overflow-x: hidden;
-  /* display: flex; */
 }
 
 .map {
@@ -176,7 +170,6 @@ body {
   height: 845px;
   background: url("../../assets/images/map.png") center no-repeat;
   background-position: top 100px left 50%;
-  /* position: relative; */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -435,6 +428,7 @@ body {
   }
 }
 
+/* map responsive 640px */
 @media screen and (max-width: 640px) {
   .map-wrapper {
     height: 785px;
@@ -512,15 +506,12 @@ body {
     top: 81%;
   }
 
-  /* .map__animal-tooltip_mobile {
-    display: block;
-  } */
-
   .map__animal-img:hover .map__animal-tooltip_mobile {
     display: block;
   }
 }
 
+/* map responsive 320px */
 @media screen and (max-width: 320px) {
   .map-wrapper {
     height: 785px;
@@ -694,15 +685,14 @@ body {
 }
 
 /* footer responsive 1200px */
-
 @media screen and (max-width: 1200px) {
   .footer {
     background-position: top 6px left 8px;
     background-size: contain;
   }
 }
-/* footer responsive 640px */
 
+/* footer responsive 640px */
 @media screen and (min-width: 640px) and (max-width: 1000px) {
   .footer {
     height: 374px;
@@ -779,6 +769,7 @@ body {
     margin-top: -0.5%;
   }
 }
+
 /* footer responsive 320-639px */
 @media screen and (min-width: 320px) and (max-width: 639px) {
   .footer {
