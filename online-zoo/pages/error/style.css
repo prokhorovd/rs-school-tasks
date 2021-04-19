@@ -17,6 +17,7 @@ body {
   font-weight: bold;
   text-align: center;
   position: relative;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -111,7 +112,7 @@ body {
   .pagenotfound__wrapper {
     background-position: top;
     position: absolute;
-    width: 86%;
+    width: 88%;
     left: 50%;
     transform: translate(-50%);
   }
@@ -156,7 +157,7 @@ body {
   .pagenotfound__wrapper {
     background-position: top;
     position: absolute;
-    width: 82%;
+    width: 85%;
     left: 50%;
     transform: translate(-50%);
   }
