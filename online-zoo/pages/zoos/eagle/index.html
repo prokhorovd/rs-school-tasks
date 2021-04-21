@@ -51,214 +51,234 @@
           </li>
         </ul>
       </nav>
+      <nav class="header__nav_mobile">
+        <img
+          src="../../../assets/icons/burger.svg"
+          alt="Menu button"
+          class="header__nav-burger"
+        />
+      </nav>
     </header>
-    <!-- animal section -->
-    <section class="animal">
-      <aside class="animal__sidebar">
-        <div class="animal__sidebar-wrapper">
-          <div
-            class="animal__sidebar-element animal__sidebar-alligator"
-            onclick="window.location.href='../alligator';"
-          >
-            <span class="animal__sidebar-tooltip">ALLIGATOR, Florida, USA</span>
-          </div>
-          <div
-            class="animal__sidebar-element animal__sidebar-panda"
-            onclick="window.location.href='../panda';"
-          >
-            <span class="animal__sidebar-tooltip animal__sidebar-tooltip-panda"
-              >PANDA, China</span
-            >
-          </div>
-          <div
-            class="animal__sidebar-element animal__sidebar-eagle animal__sidebar-active"
-            onclick="window.location.href='../eagle';"
-          >
-            <span class="animal__sidebar-tooltip animal__sidebar-tooltip-eagle"
-              >EAGLE, California, USA</span
-            >
-          </div>
-          <div
-            class="animal__sidebar-element animal__sidebar-gorilla"
-            onclick="window.location.href='../gorilla';"
-          >
-            <span class="animal__sidebar-tooltip">GORILLA, Eastern DRC</span>
-          </div>
-          <div class="animal__sidebar-element animal__sidebar-feed"></div>
-        </div>
-      </aside>
-      <div class="animal__wrapper">
-        <h2 class="section-heading">Eagle</h2>
-        <div class="animal__video-large">
-          <iframe
-            width="1160"
-            height="653"
-            src="https://www.youtube.com/embed/RmmAzrAkKqI"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          >
-            Ваш браузер не поддерживает плавающие фреймы!
-          </iframe>
-        </div>
-        <div class="animals__video-grid">
-          <div class="animal__video-small">
-            <iframe
-              width="275"
-              height="155"
-              src="https://www.youtube.com/embed/RmmAzrAkKqI"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-              Ваш браузер не поддерживает плавающие фреймы!
-            </iframe>
-          </div>
-          <div class="animal__video-small">
-            <iframe
-              width="275"
-              height="155"
-              src="https://www.youtube.com/embed/RmmAzrAkKqI"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-              Ваш браузер не поддерживает плавающие фреймы!
-            </iframe>
-          </div>
-          <div class="animal__video-small">
-            <iframe
-              width="275"
-              height="155"
-              src="https://www.youtube.com/embed/RmmAzrAkKqI"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-              Ваш браузер не поддерживает плавающие фреймы!
-            </iframe>
-          </div>
-          <div class="animal__video-small">
-            <iframe
-              width="275"
-              height="155"
-              src="https://www.youtube.com/embed/RmmAzrAkKqI"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-              Ваш браузер не поддерживает плавающие фреймы!
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Information -->
-    <section class="information">
-      <div class="information__summary">
-        <p class="information__summary-text">
-          ZOO: Santa Catalina Island Conservancy (California, USA)
-        </p>
-        <p class="information__summary-text">
-          ENCLOSURE TYPE: Imitation of the natural environment
-        </p>
-      </div>
-      <div class="information__accordeon">
-        <div class="information__accordeon-element">
-          <div class="information__accordeon-text-wrapper">
-            <h4 class="information__accordeon-heading">Population</h4>
-            <p class="information__accordeon-content">
-              Today, the population of bald eagles is in minimal danger. The
-              total number of individuals is about two hundred thousand.
-            </p>
-          </div>
-          <div class="accordeon-arrow">
+    <main>
+      <!-- animal section -->
+      <section class="animal">
+        <aside class="animal__sidebar-switcher">
+          <div class="animal__sidebar-button">
             <img
-              src="../../../assets/icons/accordeon-arrow-up.svg"
+              src="../../../assets/icons/arrow-right.svg"
               alt=""
-              class="accordeon-up-ico"
+              class="sidebar-right-ico"
             />
           </div>
+        </aside>
+        <aside class="animal__sidebar">
+          <div class="animal__sidebar-wrapper">
+            <div
+              class="animal__sidebar-element animal__sidebar-alligator"
+              onclick="window.location.href='../alligator';"
+            >
+              <span class="animal__sidebar-tooltip"
+                >ALLIGATOR, Florida, USA</span
+              >
+            </div>
+            <div
+              class="animal__sidebar-element animal__sidebar-panda"
+              onclick="window.location.href='../panda';"
+            >
+              <span
+                class="animal__sidebar-tooltip animal__sidebar-tooltip-panda"
+                >PANDA, China</span
+              >
+            </div>
+            <div
+              class="animal__sidebar-element animal__sidebar-eagle animal__sidebar-active"
+            >
+              <span
+                class="animal__sidebar-tooltip animal__sidebar-tooltip-eagle"
+                >EAGLE, California, USA</span
+              >
+            </div>
+            <div
+              class="animal__sidebar-element animal__sidebar-gorilla"
+              onclick="window.location.href='../gorilla';"
+            >
+              <span class="animal__sidebar-tooltip">GORILLA, Eastern DRC</span>
+            </div>
+            <div class="animal__sidebar-element animal__sidebar-feed"></div>
+          </div>
+        </aside>
+        <div class="animal__wrapper">
+          <h2 class="section-heading">Eagle</h2>
+          <div class="animal__video-large">
+            <iframe
+              class="animal__video-iframe"
+              src="https://www.youtube.com/embed/RmmAzrAkKqI"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+              Ваш браузер не поддерживает плавающие фреймы!
+            </iframe>
+          </div>
+          <div class="animal__button-container">
+            <button class="button animal__button">Feed</button>
+          </div>
+          <div class="animals__video-grid">
+            <div class="animal__video-small video1">
+              <iframe
+                class="animal__video-iframe_small"
+                src="https://www.youtube.com/embed/RmmAzrAkKqI"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+                Ваш браузер не поддерживает плавающие фреймы!
+              </iframe>
+            </div>
+            <div class="animal__video-small video2">
+              <iframe
+                class="animal__video-iframe_small"
+                src="https://www.youtube.com/embed/RmmAzrAkKqI"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+                Ваш браузер не поддерживает плавающие фреймы!
+              </iframe>
+            </div>
+            <div class="animal__video-small video3">
+              <iframe
+                class="animal__video-iframe_small"
+                src="https://www.youtube.com/embed/RmmAzrAkKqI"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+                Ваш браузер не поддерживает плавающие фреймы!
+              </iframe>
+            </div>
+            <div class="animal__video-small video4">
+              <iframe
+                class="animal__video-iframe_small"
+                src="https://www.youtube.com/embed/RmmAzrAkKqI"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+                Ваш браузер не поддерживает плавающие фреймы!
+              </iframe>
+            </div>
+          </div>
         </div>
+      </section>
+      <!-- Information -->
+      <section class="information">
+        <div class="information__summary">
+          <p class="information__summary-text">
+            ZOO: Santa Catalina Island Conservancy (California, USA)
+          </p>
+          <p class="information__summary-text">
+            ENCLOSURE TYPE: Imitation of the natural environment
+          </p>
+        </div>
+        <div class="information__accordeon">
+          <div class="information__accordeon-element">
+            <div class="information__accordeon-text-wrapper">
+              <h4 class="information__accordeon-heading">Population</h4>
+              <p class="information__accordeon-content">
+                Today, the population of bald eagles is in minimal danger. The
+                total number of individuals is about two hundred thousand.
+              </p>
+            </div>
+            <div class="accordeon-arrow">
+              <img
+                src="../../../assets/icons/accordeon-arrow-up.svg"
+                alt=""
+                class="accordeon-up-ico"
+              />
+            </div>
+          </div>
 
-        <div class="information__accordeon-element">
-          <div class="information__accordeon-text-wrapper">
-            <h4 class="information__accordeon-heading">habitat</h4>
-            <p class="information__accordeon-content">
-              A large number of eagles live in the state of Minnesota-about 1300
-              pairs. In another US state, Florida, there are about 1,200 pairs.
-              In Alaska, about 40 thousand individuals nest annually, after
-              laying eggs, with the onset of cold weather, the eagles fly south.
-            </p>
+          <div class="information__accordeon-element">
+            <div class="information__accordeon-text-wrapper">
+              <h4 class="information__accordeon-heading">habitat</h4>
+              <p class="information__accordeon-content">
+                A large number of eagles live in the state of Minnesota-about
+                1300 pairs. In another US state, Florida, there are about 1,200
+                pairs. In Alaska, about 40 thousand individuals nest annually,
+                after laying eggs, with the onset of cold weather, the eagles
+                fly south.
+              </p>
+            </div>
+            <div class="accordeon-arrow">
+              <img
+                src="../../../assets/icons/accordeon-arrow-up.svg"
+                alt=""
+                class="accordeon-up-ico"
+              />
+            </div>
           </div>
-          <div class="accordeon-arrow">
-            <img
-              src="../../../assets/icons/accordeon-arrow-up.svg"
-              alt=""
-              class="accordeon-up-ico"
-            />
+          <div class="information__accordeon-element">
+            <div class="information__accordeon-text-wrapper">
+              <h4 class="information__accordeon-heading">nutrition</h4>
+              <p class="information__accordeon-content">
+                Mostly bald eagles feed on fish or birds. They also hunt ground
+                squirrels, rabbits, beavers, raccoons and muskrats. Eagles can
+                also attack a baby seal. Eagles also feed on carrion, for
+                example, they eat the corpses of large horned animals.
+              </p>
+            </div>
+            <div class="accordeon-arrow">
+              <img
+                src="../../../assets/icons/accordeon-arrow-up.svg"
+                alt=""
+                class="accordeon-up-ico"
+              />
+            </div>
+          </div>
+          <div class="information__accordeon-element">
+            <div class="information__accordeon-text-wrapper">
+              <h4 class="information__accordeon-heading">interesting facts</h4>
+              <p class="information__accordeon-content">
+                Bald eagles can live a long time, with a longevity record of 28
+                years in the wild and 36 years in captivity. The bald eagle is
+                the national bird of the United States of America.
+              </p>
+            </div>
+            <div class="accordeon-arrow">
+              <img
+                src="../../../assets/icons/accordeon-arrow-up.svg"
+                alt=""
+                class="accordeon-up-ico"
+              />
+            </div>
           </div>
         </div>
-        <div class="information__accordeon-element">
-          <div class="information__accordeon-text-wrapper">
-            <h4 class="information__accordeon-heading">nutrition</h4>
-            <p class="information__accordeon-content">
-              Mostly bald eagles feed on fish or birds. They also hunt ground
-              squirrels, rabbits, beavers, raccoons and muskrats. Eagles can
-              also attack a baby seal. Eagles also feed on carrion, for example,
-              they eat the corpses of large horned animals.
-            </p>
-          </div>
-          <div class="accordeon-arrow">
-            <img
-              src="../../../assets/icons/accordeon-arrow-up.svg"
-              alt=""
-              class="accordeon-up-ico"
-            />
-          </div>
-        </div>
-        <div class="information__accordeon-element">
-          <div class="information__accordeon-text-wrapper">
-            <h4 class="information__accordeon-heading">interesting facts</h4>
-            <p class="information__accordeon-content">
-              Bald eagles can live a long time, with a longevity record of 28
-              years in the wild and 36 years in captivity. The bald eagle is the
-              national bird of the United States of America.
-            </p>
-          </div>
-          <div class="accordeon-arrow">
-            <img
-              src="../../../assets/icons/accordeon-arrow-up.svg"
-              alt=""
-              class="accordeon-up-ico"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <!-- footer -->
     <footer class="footer">
       <div class="footer__background">
-        <img
-          src="../../../assets/images/footer-background.png"
-          alt=""
-          class="footer__background-img"
-        />
         <div class="footer__wrapper">
-          <div class="footer__row1">
-            <img
-              src="../../../assets/images/logo-online-zoo.svg"
-              alt="online zoo logo"
-              class="footer__logo"
-              onclick="window.location.href='../../about/';"
-            /><button class="button footer__button">
-              Donate for volunteers
-            </button>
+          <div class="footer__content">
+            <div class="footer__logo-container">
+              <img
+                src="../../../assets/images/logo-online-zoo.svg"
+                alt="online zoo logo"
+                class="footer__logo"
+                onclick="window.location.href='../../about/';"
+              />
+            </div>
+            <div class="footer__button-container">
+              <button class="button footer__button">
+                Donate for volunteers
+              </button>
+            </div>
             <nav class="footer__nav">
               <ul class="footer__menu">
                 <li class="footer__menu-element">
@@ -303,24 +323,27 @@
                 onclick="window.location.href='https://youtube.com';"
               />
             </div>
-          </div>
-          <div class="footer__row2">
-            <img
-              src="../../../assets/images/logo-rss.png"
-              alt="RS School logo"
-              class="footer__logo-rs"
-              title="Rolling Scopes School"
-            />
-            <img
-              src="../../../assets/images/logo-yem.png"
-              alt="YEM logo"
-              class="footer__logo-yem"
-              title="Yem Digital"
-            />
-            <span class="footer__copyright"
-              >Copyright ©RSSchool and ©Yem Digital 2020 - 2021</span
-            >
-            <span class="footer__author">Grigoreva Margarita</span>
+            <div class="schools__logo-wrapper1">
+              <img
+                src="../../../assets/images/logo-rss.png"
+                alt="RS School logo"
+                class="footer__logo-rs"
+                title="Rolling Scopes School"
+              />
+            </div>
+            <div class="schools__logo-wrapper2">
+              <img
+                src="../../../assets/images/logo-yem.png"
+                alt="YEM logo"
+                class="footer__logo-yem"
+                title="Yem Digital"
+              />
+            </div>
+            <div class="footer__copyright">
+              Copyright ©RSSchool<span class="footer__copyright-and"> and </span
+              >©Yem Digital 2020 - 2021
+            </div>
+            <div class="footer__author">Grigoreva Margarita</div>
           </div>
         </div>
       </div>
