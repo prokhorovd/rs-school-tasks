@@ -1,3 +1,5 @@
+// filters handler
+
 const inputs = document.querySelectorAll('.filters input');
 console.log(inputs)
 
@@ -9,3 +11,19 @@ function handleEvent() {
 
 inputs.forEach(input => input.addEventListener('change', handleEvent));
 inputs.forEach(input => input.addEventListener('mousemove', handleEvent));
+
+// fullscreen
+
+const fullScreenButton = document.querySelector('.fullscreen');
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+fullScreenButton.addEventListener('click', toggleFullScreen);
