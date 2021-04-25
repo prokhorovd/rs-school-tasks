@@ -1,24 +1,10 @@
-// filters handler
-
-const inputs = document.querySelectorAll('.filters input');
-console.log(inputs)
-
-function handleEvent() {
-  const suffix = this.dataset.sizing || '';
-  // console.log(this.name, this.value);
-  document.documentElement.style.setProperty(`--${this.name}`, this.value+suffix);
-}
-
-inputs.forEach(input => input.addEventListener('change', handleEvent));
-inputs.forEach(input => input.addEventListener('mousemove', handleEvent));
-
-// fullscreen
+// Fullscreen implementation
 
 const fullScreenButton = document.querySelector('.fullscreen');
 
 function toggleFullScreen() {
   if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
+    document.documentElement.requestFullscreen();
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
@@ -27,3 +13,18 @@ function toggleFullScreen() {
 }
 
 fullScreenButton.addEventListener('click', toggleFullScreen);
+
+// Filters implementation
+
+const filtersDiv = document.querySelector('.filters');
+
+function handleInput() {
+  // console.log(`input was changed, input name is ${event.target.name} new value is ${event.target.value}${event.target.dataset.sizing}`);
+  let suffix = event.target.dataset.sizing || '';
+  document.documentElement.style.setProperty(`--${event.target.name}`, `${event.target.value}${suffix}`);
+  event.target.nextElementSibling.innerHTML = `${event.target.value}`;
+}
+
+filtersDiv.addEventListener('input', handleInput)
+
+// ######################################################################################
