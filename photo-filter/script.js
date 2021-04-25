@@ -127,3 +127,23 @@ function handleNextPicture() {
 nextPictureBtn.addEventListener('click', handleNextPicture);
 
 // Reset button
+
+const resetButton = document.querySelector('.btn-reset');
+
+function handleReset() {
+  const allFilters = document.querySelectorAll('.filters input');
+  allFilters.forEach(element => {
+    if (element.name === 'saturate') {
+      element.value = '100%';
+      element.nextElementSibling.innerHTML = `100`
+      document.documentElement.style.setProperty(`--${element.name}`, `100%`);
+    } else {
+      element.value = 0;
+      element.nextElementSibling.innerHTML = `0`;
+      document.documentElement.style.setProperty(`--${element.name}`, `0`);
+    }
+
+  });
+}
+
+resetButton.addEventListener('click', handleReset);
