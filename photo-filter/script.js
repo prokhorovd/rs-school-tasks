@@ -27,10 +27,11 @@ function handleInput() {
 }
 
 filtersDiv.addEventListener('input', handleInput)
+const canvas = document.getElementById('image-canvas');
 
 // create canvas
 function createCanvas() {
-  let canvas = document.getElementById('image-canvas');
+
   if (canvas.getContext) {
     let ctx = canvas.getContext('2d');
     // Создаем объект изображения
@@ -107,21 +108,30 @@ function generatePictureLink() {
 
   // отрисуем канвас с новой картинкой
 function handleNextPicture() {
-  let canvas = document.getElementById('image-canvas');
-  if (canvas.getContext) {
-    let ctx = canvas.getContext('2d');
-    // Создаем объект изображения
-    let img = new Image();
-
-    // Привязываем функцию к событию onload
-    // Это указывает браузеру, что делать, когда изображение загружено
-    img.onload = function() {
-      ctx.drawImage(img, 0, 0, 830, 520);
-    };
-
-    // Загружаем файл изображения
-    img.src = generatePictureLink();
-  }
+  // let canvas = document.getElementById('image-canvas');
+  // if (canvas.getContext) {
+  //   let ctx = canvas.getContext('2d');
+  //   // Создаем объект изображения
+  //   let img = new Image();
+  //
+  //   // Привязываем функцию к событию onload
+  //   // Это указывает браузеру, что делать, когда изображение загружено
+  //   img.onload = function() {
+  //     ctx.drawImage(img, 0, 0, 830, 520);
+  //   };
+  //
+  //   // Загружаем файл изображения
+  //   img.src = generatePictureLink();
+  // }
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
+  img.src = generatePictureLink();
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+  };
 }
 
 nextPictureBtn.addEventListener('click', handleNextPicture);
@@ -147,3 +157,35 @@ function handleReset() {
 }
 
 resetButton.addEventListener('click', handleReset);
+
+// Upload button
+
+const fileInput = document.querySelector('input[type="file"]');
+
+function createUploadCanvas(imgSrc) {
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
+  img.src = imgSrc;
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+  };
+}
+
+fileInput.addEventListener('click', () => {
+  fileInput.value = '';
+});
+
+fileInput.addEventListener('change', function(e) {
+  // console.log('fileinput initiated')
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    const img = new Image();
+    img.src = reader.result;
+    createUploadCanvas(img.src);
+  }
+  reader.readAsDataURL(file);
+});
