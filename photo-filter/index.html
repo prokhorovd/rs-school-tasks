@@ -13,7 +13,7 @@
     <link href="style.css" rel="stylesheet" />
     <title>photo-filter</title>
   </head>
-  <body>
+  <body onload="createCanvas();">
     <header class="header">
       <h1 class="header-title">Photo-filter</h1>
     </header>
@@ -61,7 +61,8 @@
           </label>
           <button class="btn btn-save">Save picture</button>
         </div>
-        <img src="assets/img/img.jpg" alt="image" />
+        <canvas id="image-canvas" width="830" height="520"><img src="assets/img/img.jpg" alt="image" /></canvas>
+<!--        -->
       </div>
     </main>
     <footer class="footer">
