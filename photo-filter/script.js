@@ -40,7 +40,9 @@ function createCanvas() {
     // Привязываем функцию к событию onload
     // Это указывает браузеру, что делать, когда изображение загружено
     img.onload = function() {
-      ctx.drawImage(img, 0, 0, 830, 520);
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
     };
 
     // Загружаем файл изображения
@@ -189,3 +191,118 @@ fileInput.addEventListener('change', function(e) {
   }
   reader.readAsDataURL(file);
 });
+
+// Download button
+
+const downloadButton = document.querySelector('.btn-save');
+
+function testFunc() {
+  // создать копию последнего изображения на скрытом канвасе
+  const hiddenCanvas = document.getElementById('canvas-hidden');
+  const img = new Image();
+  img.setAttribute('crossOrigin', 'anonymous');
+  // console.log(canvas.toDataURL("image/png"));
+  img.src = canvas.toDataURL("image/png");
+  img.onload = function() {
+    hiddenCanvas.width = img.width;
+    hiddenCanvas.height = img.height;
+    const ctx = hiddenCanvas.getContext("2d");
+    // попытка 2 достать значения фильтров и применить.
+    // получим значение фильтров
+    let allFilters = document.querySelectorAll("output");
+    let filterValuesArray = [];
+    allFilters.forEach(element => {
+      filterValuesArray.push(element.value);
+    })
+    console.log(`filter values Array = ${filterValuesArray}`);
+    // откорректируем значение blur
+    // 1) посчитаем коэффициент blur
+    let canvasWindow = document.getElementById('image-canvas');
+    let blurCoefficient;
+    // проверяем что больше - ширина или высота картинки, берем большее
+    if (canvasWindow.width >= canvasWindow.height) {
+      // проверяем больше ли изображение чем окно в которое вписано изображение
+      if (canvasWindow.width >= canvasWindow.offsetWidth) {
+        blurCoefficient = canvasWindow.width / canvasWindow.offsetWidth;
+      } else blurCoefficient = canvasWindow.width / canvasWindow.offsetWidth;
+    } else {
+      if (canvasWindow.height >= canvasWindow.offsetHeight) {
+        blurCoefficient = canvasWindow.height / canvasWindow.offsetHeight;
+      } else blurCoefficient = canvasWindow.height / canvasWindow.offsetHeight;
+    }
+    blurCoefficient = blurCoefficient.toFixed(2);
+    console.log(`blur coefficient for this image is ${blurCoefficient}`)
+    // 2) добавим откорректированое значение к остальным значениям фильтров
+    let calculatedBlur = (filterValuesArray[0] * blurCoefficient).toFixed(2);
+    filterValuesArray[0] = calculatedBlur;
+
+    // составим список фильтров со значениями для canvas:
+    let filtersList = `blur(${filterValuesArray[0]}px) invert(${filterValuesArray[1]}%) sepia(${filterValuesArray[2]}%) saturate(${filterValuesArray[3]}%) hue-rotate(${filterValuesArray[4]}deg)`;
+    console.log(`filter list to apply: ${filtersList}`)
+
+    // применим фильтры
+    ctx.filter = filtersList;
+
+    // достаем значения фильтров из документа
+    // let filterString = document.documentElement.style.cssText;
+    // let modifiedFilterString = '';
+    // let filterArray = filterString.split('');
+    // for (let i = 0; i < filterArray.length; i++) {
+    //   if (filterArray[i] != '-') {
+    //     if (filterArray[i] === ':') {
+    //       modifiedFilterString += '(';
+    //     } else if (filterArray[i] === ';') {
+    //       modifiedFilterString += ')';
+    //     } else modifiedFilterString += filterArray[i];
+    //   }
+    // }
+    // console.log(modifiedFilterString);
+    // // filterArray = modifiedFilterString.split(' ');
+    // // console.log(filterArray);
+    //
+    // //применяем полученные фильтры
+    // console.log(`Applied filters: ${modifiedFilterString}`);
+    // ctx.filter = modifiedFilterString;
+
+    // если есть blur - модифицировать его коэффициентом и снова добавить к фильтрам
+    // let canvasWindow = document.getElementById('image-canvas');
+    // let blurCoefficient;
+    // if (canvasWindow.width > canvasWindow.offsetHeight) {
+    //   if (canvasWindow.width >= canvasWindow.height) {
+    //     blurCoefficient = canvasWindow.width / canvasWindow.offsetWidth;
+    //   } else blurCoefficient = canvasWindow.height / canvasWindow.offsetHeight;
+    // } else {
+    //   if (canvasWindow.width <= canvasWindow.height) {
+    //     blurCoefficient = canvasWindow.width / canvasWindow.offsetWidth;
+    //   } else blurCoefficient = canvasWindow.height / canvasWindow.offsetHeight;
+    // }
+    // blurCoefficient = blurCoefficient.toFixed(2);
+    // console.log(`blur coefficient for this image is ${blurCoefficient}`)
+    // // del ctx.filter = `blur(1px) blur(1px) sepia(1%) blur(${10*blurCoefficient}px)`;
+
+    // значение blur берется из первого output на странице
+    // let calculatedBlur = (document.querySelector('output').value * blurCoefficient).toFixed(1);
+    // console.log(`corrected blur is ${calculatedBlur}`)
+    // modifiedFilterString += ` blur(${calculatedBlur}px)`;
+    // ctx.filter = modifiedFilterString;
+    // console.log(`Corrected filters: ${modifiedFilterString}`);
+
+    //
+    // modifiedFilterString += ' blur(0.75px)'
+
+
+    // console.log(modifiedFilterString);
+    //filter: invert(75%); sepia(60%);saturate(30%);hue-rotate(90deg);
+
+    // рисуем получившееся художество на скрытом холсте
+    ctx.drawImage(img, 0, 0);
+    // получаем ссылку и скачиваем содержимое скрытого холста
+    let link = document.createElement('a');
+    link.download = 'download.png';
+    link.href = hiddenCanvas.toDataURL("image/png");
+    link.click();
+    link.delete;
+  };
+}
+
+downloadButton.addEventListener('click', testFunc);
