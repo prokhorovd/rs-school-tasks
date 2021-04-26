@@ -227,3 +227,21 @@ function saveFunc() {
 }
 
 downloadButton.addEventListener('click', saveFunc);
+
+// Control-buttons styles
+const buttonRow = document.querySelectorAll('.btn');
+
+function makeButtonsUnactive() {
+  buttonRow.forEach(element => {
+    element.classList.remove('btn-active');
+  })
+}
+
+function makeButtonActive() {
+  makeButtonsUnactive();
+  event.target.classList.add('btn-active');
+}
+
+buttonRow.forEach(element => {
+  element.addEventListener('click', makeButtonActive);
+})
