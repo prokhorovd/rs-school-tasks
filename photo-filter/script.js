@@ -1,5 +1,4 @@
 // Fullscreen implementation
-
 const fullScreenButton = document.querySelector('.fullscreen');
 
 function toggleFullScreen() {
@@ -15,11 +14,9 @@ function toggleFullScreen() {
 fullScreenButton.addEventListener('click', toggleFullScreen);
 
 // Filters implementation
-
 const filtersDiv = document.querySelector('.filters');
 
 function handleInput() {
-  // console.log(`input was changed, input name is ${event.target.name} new value is ${event.target.value}${event.target.dataset.sizing}`);
   const suffix = event.target.dataset.sizing || '';
   document.documentElement.style.setProperty(`--${event.target.name}`, `${event.target.value}${suffix}`);
   // output field:
@@ -27,31 +24,28 @@ function handleInput() {
 }
 
 filtersDiv.addEventListener('input', handleInput)
+
+// Сreate canvas
 const canvas = document.getElementById('image-canvas');
 
-// create canvas
 function createCanvas() {
 
   if (canvas.getContext) {
     let ctx = canvas.getContext('2d');
     // Создаем объект изображения
     let img = new Image();
-
     // Привязываем функцию к событию onload
-    // Это указывает браузеру, что делать, когда изображение загружено
     img.onload = function() {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
     };
-
     // Загружаем файл изображения
     img.src = "./assets/img/img.jpg";
   }
 }
 
 // Next picture button:
-
 const nextPictureBtn = document.querySelector('.btn-next');
 
   // Здесь будем хранить переменные
@@ -78,10 +72,7 @@ function getTimeOfDay() {
   return timeOfDay;
 }
 
-  // console.log(`current time is ${currentTime}`);
-  // console.log(`time of day is ${timeOfDay}`);
-
-  // создать ссылку на изображение
+  // создаем ссылку на изображение
 function generatePictureLink() {
   // учитываем время суток
   if (timeOfDay === undefined) {
@@ -108,23 +99,8 @@ function generatePictureLink() {
   return link;
 }
 
-  // отрисуем канвас с новой картинкой
+  // Отрисовка канваса со следующей картинкой
 function handleNextPicture() {
-  // let canvas = document.getElementById('image-canvas');
-  // if (canvas.getContext) {
-  //   let ctx = canvas.getContext('2d');
-  //   // Создаем объект изображения
-  //   let img = new Image();
-  //
-  //   // Привязываем функцию к событию onload
-  //   // Это указывает браузеру, что делать, когда изображение загружено
-  //   img.onload = function() {
-  //     ctx.drawImage(img, 0, 0, 830, 520);
-  //   };
-  //
-  //   // Загружаем файл изображения
-  //   img.src = generatePictureLink();
-  // }
   const img = new Image();
   img.setAttribute('crossOrigin', 'anonymous');
   img.src = generatePictureLink();
@@ -139,7 +115,6 @@ function handleNextPicture() {
 nextPictureBtn.addEventListener('click', handleNextPicture);
 
 // Reset button
-
 const resetButton = document.querySelector('.btn-reset');
 
 function handleReset() {
@@ -161,7 +136,6 @@ function handleReset() {
 resetButton.addEventListener('click', handleReset);
 
 // Upload button
-
 const fileInput = document.querySelector('input[type="file"]');
 
 function createUploadCanvas(imgSrc) {
@@ -181,7 +155,6 @@ fileInput.addEventListener('click', () => {
 });
 
 fileInput.addEventListener('change', function(e) {
-  // console.log('fileinput initiated')
   const file = fileInput.files[0];
   const reader = new FileReader();
   reader.onload = () => {
@@ -193,22 +166,20 @@ fileInput.addEventListener('change', function(e) {
 });
 
 // Download button
-
 const downloadButton = document.querySelector('.btn-save');
 
-function testFunc() {
-  // создать копию последнего изображения на скрытом канвасе
+function saveFunc() {
+  // создаем копию последнего изображения на скрытом канвасе
   const hiddenCanvas = document.getElementById('canvas-hidden');
   const img = new Image();
   img.setAttribute('crossOrigin', 'anonymous');
-  // console.log(canvas.toDataURL("image/png"));
   img.src = canvas.toDataURL("image/png");
+  // по загрузке изображения применяем к нему фильтры и скачиваем
   img.onload = function() {
     hiddenCanvas.width = img.width;
     hiddenCanvas.height = img.height;
     const ctx = hiddenCanvas.getContext("2d");
-    // попытка 2 достать значения фильтров и применить.
-    // получим значение фильтров
+    // получим значения фильтров
     let allFilters = document.querySelectorAll("output");
     let filterValuesArray = [];
     allFilters.forEach(element => {
@@ -243,59 +214,9 @@ function testFunc() {
     // применим фильтры
     ctx.filter = filtersList;
 
-    // достаем значения фильтров из документа
-    // let filterString = document.documentElement.style.cssText;
-    // let modifiedFilterString = '';
-    // let filterArray = filterString.split('');
-    // for (let i = 0; i < filterArray.length; i++) {
-    //   if (filterArray[i] != '-') {
-    //     if (filterArray[i] === ':') {
-    //       modifiedFilterString += '(';
-    //     } else if (filterArray[i] === ';') {
-    //       modifiedFilterString += ')';
-    //     } else modifiedFilterString += filterArray[i];
-    //   }
-    // }
-    // console.log(modifiedFilterString);
-    // // filterArray = modifiedFilterString.split(' ');
-    // // console.log(filterArray);
-    //
-    // //применяем полученные фильтры
-    // console.log(`Applied filters: ${modifiedFilterString}`);
-    // ctx.filter = modifiedFilterString;
-
-    // если есть blur - модифицировать его коэффициентом и снова добавить к фильтрам
-    // let canvasWindow = document.getElementById('image-canvas');
-    // let blurCoefficient;
-    // if (canvasWindow.width > canvasWindow.offsetHeight) {
-    //   if (canvasWindow.width >= canvasWindow.height) {
-    //     blurCoefficient = canvasWindow.width / canvasWindow.offsetWidth;
-    //   } else blurCoefficient = canvasWindow.height / canvasWindow.offsetHeight;
-    // } else {
-    //   if (canvasWindow.width <= canvasWindow.height) {
-    //     blurCoefficient = canvasWindow.width / canvasWindow.offsetWidth;
-    //   } else blurCoefficient = canvasWindow.height / canvasWindow.offsetHeight;
-    // }
-    // blurCoefficient = blurCoefficient.toFixed(2);
-    // console.log(`blur coefficient for this image is ${blurCoefficient}`)
-    // // del ctx.filter = `blur(1px) blur(1px) sepia(1%) blur(${10*blurCoefficient}px)`;
-
-    // значение blur берется из первого output на странице
-    // let calculatedBlur = (document.querySelector('output').value * blurCoefficient).toFixed(1);
-    // console.log(`corrected blur is ${calculatedBlur}`)
-    // modifiedFilterString += ` blur(${calculatedBlur}px)`;
-    // ctx.filter = modifiedFilterString;
-    // console.log(`Corrected filters: ${modifiedFilterString}`);
-
-    //
-    // modifiedFilterString += ' blur(0.75px)'
-
-
-    // console.log(modifiedFilterString);
-    //filter: invert(75%); sepia(60%);saturate(30%);hue-rotate(90deg);
-
     // рисуем получившееся художество на скрытом холсте
     ctx.drawImage(img, 0, 0);
+
     // получаем ссылку и скачиваем содержимое скрытого холста
     let link = document.createElement('a');
     link.download = 'download.png';
@@ -305,4 +226,4 @@ function testFunc() {
   };
 }
 
-downloadButton.addEventListener('click', testFunc);
+downloadButton.addEventListener('click', saveFunc);
