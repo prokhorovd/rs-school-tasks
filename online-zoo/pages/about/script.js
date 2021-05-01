@@ -97,3 +97,47 @@ popupWrapper.addEventListener('click', (event) => {
 // document.addEventListener('click',(event) => {
 //   console.log(event.target);
 // })
+
+// HOW IT WORKS CAROUSEL
+const howitworksSlider = document.querySelector(".howitworks__slider");
+const howitworksElements = document.querySelectorAll(".howitworks__slider-element");
+const howitworksSliderElems = Array.from(howitworksElements);
+
+howitworksSlider.addEventListener('click', function (event) {
+  let newActive = event.target;
+  let isItem = newActive.closest('.howitworks__slider-element');
+
+  if (!isItem || newActive.classList.contains('howitworks__slider-element_active')) {
+    return;
+  };
+
+  update(newActive);
+});
+
+const update = function(newActive) {
+  const newActivePos = newActive.dataset.position;
+
+  const current = howitworksSliderElems.find((elem) => elem.dataset.position == 0);
+  const prev = howitworksSliderElems.find((elem) => elem.dataset.position == -1);
+  const next = howitworksSliderElems.find((elem) => elem.dataset.position == 1);
+  const first = howitworksSliderElems.find((elem) => elem.dataset.position == -2);
+  const last = howitworksSliderElems.find((elem) => elem.dataset.position == 2);
+
+  current.classList.remove('howitworks__slider-element_active');
+
+  [current, prev, next, first, last].forEach(item => {
+    let itemPos = item.dataset.position;
+
+    item.dataset.position = getPos(itemPos, newActivePos)
+  });
+};
+
+const getPos = function (current, active) {
+  const diff = current - active;
+
+  if (Math.abs(current - active) > 2) {
+    return -current
+  }
+
+  return diff;
+}
