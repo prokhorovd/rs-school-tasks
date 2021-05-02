@@ -351,7 +351,6 @@ body {
   background: url(../../assets/images/howitworks-5elephant.jpg) center no-repeat;
 }
 
-
 .howitworks__slider-element[data-position="0"] {
   transform: scale(1.4, 1.3);
   z-index: 5;
@@ -534,7 +533,49 @@ body {
 
 /* howitworks styles end */
 
-/* pets styles start */
+/* pets in zoo slider */
+.pets__slider-div {
+  /*background: red;*/
+}
+
+.pets__slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 992px;
+  height: 630px;
+  z-index: 1;
+}
+
+.slides {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: -992px;
+  width: 10000px;
+}
+
+.slides.shifting {
+  transition: left .2s ease-out;
+}
+
+.slide {
+  width: 992px;
+  height: 630px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s;
+  position: relative;
+  border-radius: 2px;
+}
+
+.pets__slider-prev:active,
+.pets__slider-next:active {
+  transform: scale(.8);
+}
+
+/* pets cards styles start */
 
 .pets {
   max-width: 1160px;
