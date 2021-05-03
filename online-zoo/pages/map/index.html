@@ -1,267 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./normalize.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./normalize.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+          rel="stylesheet"
+  />
+  <link rel="shortcut icon" href="../../assets/icons/favicon.ico" />
+  <title>Online Zoo - Map</title>
+</head>
+<body>
+<h1 class="page-heading">Online Zoo</h1>
+<!-- header -->
+<header class="header">
+  <div class="header__logo">
+    <a href="../about/" class="header__logo-link">
+      <img
+              src="../../assets/images/logo-online-zoo.svg"
+              alt="online zoo logo"
+              class="header__logo-img"
+      />
+    </a>
+  </div>
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      <li class="header__nav-element">
+        <a href="../about/" class="header__nav-link">About</a>
+      </li>
+      <li class="header__nav-element">
+        <a href="../map/" class="header__nav-link header__nav-activelink"
+        >Map</a
+        >
+      </li>
+      <li class="header__nav-element">
+        <a href="../zoos/panda" class="header__nav-link">Zoos</a>
+      </li>
+      <li class="header__nav-element">
+        <a href="../error/" class="header__nav-link">Contact us</a>
+      </li>
+      <li class="header__nav-element">
+        <a
+                href="https://www.figma.com/file/aBvQMVmI665DtzprpiniuH/online-zoo?node-id=0%3A1"
+                class="header__nav-link"
+                target="_blank"
+        >Design</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <nav class="header__nav_mobile">
+    <img
+            src="../../assets/icons/burger.svg"
+            alt="Menu button"
+            class="header__nav-burger"
     />
-    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" />
-    <title>Online Zoo - Map</title>
-  </head>
-  <body>
-    <h1 class="page-heading">Online Zoo</h1>
-    <!-- header -->
-    <header class="header">
-      <div class="header__logo">
-        <a href="../about/" class="header__logo-link">
-          <img
-            src="../../assets/images/logo-online-zoo.svg"
-            alt="online zoo logo"
-            class="header__logo-img"
-          />
-        </a>
-      </div>
-      <nav class="header__nav">
-        <ul class="header__nav-list">
-          <li class="header__nav-element">
-            <a href="../about/" class="header__nav-link">About</a>
-          </li>
-          <li class="header__nav-element">
-            <a href="../map/" class="header__nav-link header__nav-activelink"
-              >Map</a
-            >
-          </li>
-          <li class="header__nav-element">
-            <a href="../zoos/panda" class="header__nav-link">Zoos</a>
-          </li>
-          <li class="header__nav-element">
-            <a href="../error/" class="header__nav-link">Contact us</a>
-          </li>
-          <li class="header__nav-element">
-            <a
-              href="https://www.figma.com/file/aBvQMVmI665DtzprpiniuH/online-zoo?node-id=0%3A1"
-              class="header__nav-link"
-              target="_blank"
-              >Design</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <nav class="header__nav_mobile">
-        <img
-          src="../../assets/icons/burger.svg"
-          alt="Menu button"
-          class="header__nav-burger"
-        />
-      </nav>
-    </header>
+  </nav>
+</header>
 
-    <!-- map -->
-    <div class="map-wrapper">
-      <section class="map">
-        <p class="map__text map__usa">USA</p>
-        <p class="map__text map__edrc">Eastern DRC</p>
-        <p class="map__text map__china">China</p>
+<!-- map -->
+<div class="map__wrapper" id="map__wrapper">
+  <div class="map__content">
+    <div class="positioning-helper">
+      <img src="../../assets/images/map.png" alt="" class="map__image">
+      <p class="map__text map__usa">USA</p>
+      <p class="map__text map__edrc">Eastern DRC</p>
+      <p class="map__text map__china">China</p>
+      <img
+              src="../../assets/icons/geomark.svg"
+              alt="eagle geoposition"
+              class="map__geomark-eagle"
+      />
+      <img
+              src="../../assets/icons/geomark.svg"
+              alt="alligator geoposition"
+              class="map__geomark-alligator"
+      />
+      <img
+              src="../../assets/icons/geomark.svg"
+              alt="gorilla geoposition"
+              class="map__geomark-gorilla"
+      />
+      <img
+              src="../../assets/icons/geomark.svg"
+              alt="gorilla geoposition"
+              class="map__geomark-panda"
+      />
 
-        <img
-          src="../../assets/icons/geomark.svg"
-          alt="eagle geoposition"
-          class="map__geomark-eagle"
-        />
-        <img
-          src="../../assets/icons/geomark.svg"
-          alt="alligator geoposition"
-          class="map__geomark-alligator"
-        />
-        <img
-          src="../../assets/icons/geomark.svg"
-          alt="gorilla geoposition"
-          class="map__geomark-gorilla"
-        />
-        <img
-          src="../../assets/icons/geomark.svg"
-          alt="gorilla geoposition"
-          class="map__geomark-panda"
-        />
+      <img
+              src="../../assets/icons/geomark-small.svg"
+              alt="eagle geoposition"
+              class="map__geomark-eagle_small"
+      />
+      <img
+              src="../../assets/icons/geomark-small.svg"
+              alt="alligator geoposition"
+              class="map__geomark-alligator_small"
+      />
+      <img
+              src="../../assets/icons/geomark-small.svg"
+              alt="gorilla geoposition"
+              class="map__geomark-gorilla_small"
+      />
+      <img
+              src="../../assets/icons/geomark-small.svg"
+              alt="gorilla geoposition"
+              class="map__geomark-panda_small"
+      />
 
-        <img
-          src="../../assets/icons/geomark-small.svg"
-          alt="eagle geoposition"
-          class="map__geomark-eagle_small"
-        />
-        <img
-          src="../../assets/icons/geomark-small.svg"
-          alt="alligator geoposition"
-          class="map__geomark-alligator_small"
-        />
-        <img
-          src="../../assets/icons/geomark-small.svg"
-          alt="gorilla geoposition"
-          class="map__geomark-gorilla_small"
-        />
-        <img
-          src="../../assets/icons/geomark-small.svg"
-          alt="gorilla geoposition"
-          class="map__geomark-panda_small"
-        />
-
-        <div class="map__animal-wrapper map__element-eagle">
-          <p class="map__animal-name">eagle</p>
-          <div
-            class="map__animal-img map__animal-img-eagle"
-            onclick="window.location.href='../zoos/eagle';"
-          >
-            <span class="map__animal-tooltip map__animal-tooltip-eagle"
+      <div class="map__animal-wrapper map__element-eagle">
+        <p class="map__animal-name">eagle</p>
+        <div
+                class="map__animal-img map__animal-img-eagle"
+                onclick="window.location.href='../zoos/eagle';"
+        >
+              <span class="map__animal-tooltip map__animal-tooltip-eagle"
               >EAGLE, California, USA</span
-            >
-          </div>
-        </div>
-
-        <div class="map__animal-wrapper map__element-alligator">
-          <div
-            class="map__animal-img map__animal-img-alligator"
-            onclick="window.location.href='../zoos/alligator';"
-          >
-            <span class="map__animal-tooltip">ALLIGATOR, Florida, USA</span>
-            <div class="map__animal-tooltip_mobile">
-              <div class="tooltip-heading">Alligator,</div>
-              <div class="tooltip-content">Florida, USA</div>
-              <button class="tooltip-button">Watch online</button>
-            </div>
-          </div>
-          <p class="map__animal-name">alligator</p>
-        </div>
-
-        <div class="map__animal-wrapper map__element-gorilla">
-          <div
-            class="map__animal-img map__animal-img-gorilla"
-            onclick="window.location.href='../zoos/gorilla';"
-          >
-            <span class="map__animal-tooltip">GORILLA, Eastern DRC</span>
-            <div class="map__animal-tooltip_mobile">
-              <div class="tooltip-heading">Gorilla,</div>
-              <div class="tooltip-content">Eastern DRC</div>
-              <button class="tooltip-button">Watch online</button>
-            </div>
-          </div>
-          <p class="map__animal-name">gorilla</p>
-        </div>
-
-        <div class="map__animal-wrapper map__element-panda">
-          <div
-            class="map__animal-img map__animal-img-panda"
-            onclick="window.location.href='../zoos/panda';"
-          >
-            <span class="map__animal-tooltip">PANDA, China</span>
-          </div>
-          <p class="map__animal-name map__animal-name-panda">panda bear</p>
-        </div>
-      </section>
-    </div>
-    <div class="map-zoom">
-      <div class="map-zoom__wrapper">
-        <img
-          src="../../assets/images/map-zoom-minus.png"
-          alt=""
-          class="map-zoom__minus"
-        />
-        <img
-          src="../../assets/images/map-zoom-plus.png"
-          alt=""
-          class="map-zoom__plus"
-        />
-      </div>
-    </div>
-    <!-- footer -->
-    <footer class="footer">
-      <div class="footer__background">
-        <div class="footer__wrapper">
-          <div class="footer__content">
-            <div class="footer__logo-container">
-              <img
-                src="../../assets/images/logo-online-zoo.svg"
-                alt="online zoo logo"
-                class="footer__logo"
-                onclick="window.location.href='../../about/';"
-              />
-            </div>
-            <div class="footer__button-container">
-              <button class="button footer__button">
-                Donate for volunteers
-              </button>
-            </div>
-            <nav class="footer__nav">
-              <ul class="footer__menu">
-                <li class="footer__menu-element">
-                  <a href="../about/" class="footer__menu-link">About</a>
-                </li>
-                <li class="footer__menu-element">
-                  <a href="../map/" class="footer__menu-link">Map</a>
-                </li>
-                <li class="footer__menu-element">
-                  <a href="../error/" class="footer__menu-link">Contact us</a>
-                </li>
-                <li class="footer__menu-element">
-                  <a href="#" class="footer__menu-link">Feedback</a>
-                </li>
-              </ul>
-            </nav>
-            <div class="footer__social">
-              <img
-                src="../../assets/icons/instagram-ico.svg"
-                alt="instagram"
-                class="footer__social-ico"
-                onclick="window.location.href='https://instagram.com';"
-              />
-              <img
-                src="../../assets/icons/facebook-ico.svg"
-                alt="instagram"
-                class="footer__social-ico"
-                onclick="window.location.href='https://facebook.com';"
-              />
-              <img
-                src="../../assets/icons/twitter-ico.svg"
-                alt="instagram"
-                class="footer__social-ico"
-                onclick="window.location.href='https://twitter.com';"
-              />
-              <img
-                src="../../assets/icons/youtube-ico.svg"
-                alt="instagram"
-                class="footer__social-ico"
-                onclick="window.location.href='https://youtube.com';"
-              />
-            </div>
-            <div class="schools__logo-wrapper1">
-              <img
-                src="../../assets/images/logo-rss.png"
-                alt="RS School logo"
-                class="footer__logo-rs"
-                title="Rolling Scopes School"
-              />
-            </div>
-            <div class="schools__logo-wrapper2">
-              <img
-                src="../../assets/images/logo-yem.png"
-                alt="YEM logo"
-                class="footer__logo-yem"
-                title="Yem Digital"
-              />
-            </div>
-            <div class="footer__copyright">
-              Copyright ©RSSchool<span class="footer__copyright-and"> and </span
-              >©Yem Digital 2020 - 2021
-            </div>
-            <div class="footer__author">Grigoreva Margarita</div>
-          </div>
+              >
         </div>
       </div>
-    </footer>
-  </body>
+
+      <div class="map__animal-wrapper map__element-alligator">
+        <div
+                class="map__animal-img map__animal-img-alligator"
+                onclick="window.location.href='../zoos/alligator';"
+        >
+          <span class="map__animal-tooltip">ALLIGATOR, Florida, USA</span>
+          <div class="map__animal-tooltip_mobile">
+            <div class="tooltip-heading">Alligator,</div>
+            <div class="tooltip-content">Florida, USA</div>
+            <button class="tooltip-button">Watch online</button>
+          </div>
+        </div>
+        <p class="map__animal-name">alligator</p>
+      </div>
+
+      <div class="map__animal-wrapper map__element-gorilla">
+        <div
+                class="map__animal-img map__animal-img-gorilla"
+                onclick="window.location.href='../zoos/gorilla';"
+        >
+          <span class="map__animal-tooltip">GORILLA, Eastern DRC</span>
+          <div class="map__animal-tooltip_mobile">
+            <div class="tooltip-heading">Gorilla,</div>
+            <div class="tooltip-content">Eastern DRC</div>
+            <button class="tooltip-button">Watch online</button>
+          </div>
+        </div>
+        <p class="map__animal-name">gorilla</p>
+      </div>
+
+      <div class="map__animal-wrapper map__element-panda">
+        <div
+                class="map__animal-img map__animal-img-panda"
+                onclick="window.location.href='../zoos/panda';"
+        >
+          <span class="map__animal-tooltip">PANDA, China</span>
+        </div>
+        <p class="map__animal-name map__animal-name-panda">panda bear</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--    zoom buttons-->
+<div class="map-zoom">
+  <div class="map-zoom__wrapper">
+    <img
+            src="../../assets/images/map-zoom-minus.png"
+            alt=""
+            class="map-zoom__minus"
+            id="map-btn-minus"
+    />
+    <img
+            src="../../assets/images/map-zoom-plus.png"
+            alt=""
+            class="map-zoom__plus"
+            id="map-btn-plus"
+    />
+  </div>
+</div>
+<!-- footer -->
+<footer class="footer">
+  <div class="footer__background">
+    <div class="footer__wrapper">
+      <div class="footer__content">
+        <div class="footer__logo-container">
+          <img
+                  src="../../assets/images/logo-online-zoo.svg"
+                  alt="online zoo logo"
+                  class="footer__logo"
+                  onclick="window.location.href='../../about/';"
+          />
+        </div>
+        <div class="footer__button-container">
+          <button class="button footer__button">
+            Donate for volunteers
+          </button>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__menu">
+            <li class="footer__menu-element">
+              <a href="../about/" class="footer__menu-link">About</a>
+            </li>
+            <li class="footer__menu-element">
+              <a href="../map/" class="footer__menu-link">Map</a>
+            </li>
+            <li class="footer__menu-element">
+              <a href="../error/" class="footer__menu-link">Contact us</a>
+            </li>
+            <li class="footer__menu-element">
+              <a href="#" class="footer__menu-link">Feedback</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__social">
+          <img
+                  src="../../assets/icons/instagram-ico.svg"
+                  alt="instagram"
+                  class="footer__social-ico"
+                  onclick="window.location.href='https://instagram.com';"
+          />
+          <img
+                  src="../../assets/icons/facebook-ico.svg"
+                  alt="instagram"
+                  class="footer__social-ico"
+                  onclick="window.location.href='https://facebook.com';"
+          />
+          <img
+                  src="../../assets/icons/twitter-ico.svg"
+                  alt="instagram"
+                  class="footer__social-ico"
+                  onclick="window.location.href='https://twitter.com';"
+          />
+          <img
+                  src="../../assets/icons/youtube-ico.svg"
+                  alt="instagram"
+                  class="footer__social-ico"
+                  onclick="window.location.href='https://youtube.com';"
+          />
+        </div>
+        <div class="schools__logo-wrapper1">
+          <img
+                  src="../../assets/images/logo-rss.png"
+                  alt="RS School logo"
+                  class="footer__logo-rs"
+                  title="Rolling Scopes School"
+          />
+        </div>
+        <div class="schools__logo-wrapper2">
+          <img
+                  src="../../assets/images/logo-yem.png"
+                  alt="YEM logo"
+                  class="footer__logo-yem"
+                  title="Yem Digital"
+          />
+        </div>
+        <div class="footer__copyright">
+          Copyright ©RSSchool<span class="footer__copyright-and"> and </span
+        >©Yem Digital 2020 - 2021
+        </div>
+        <div class="footer__author">Grigoreva Margarita</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="./script.js"></script>
+</body>
 </html>
