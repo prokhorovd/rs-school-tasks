@@ -78,7 +78,58 @@ document.querySelectorAll('.accordeon-arrow').forEach(element => {
   });
 });
 
+// auto carousel
+const gap = 16;
+
+const carousel = document.getElementById('animals__carousel'),
+  content = document.getElementById('animals__video-grid');
+
+let slideIndex = 0;
+
+let width = carousel.offsetWidth;
+let slideWidth = document.querySelector('.animals__video-iframe').offsetWidth;
+window.addEventListener('resize', (e) => {
+  width = carousel.offsetWidth;
+  slideWidth = document.querySelector('.animals__video-iframe').offsetWidth;
+});
+
+const slideFunc = () => {
+  slideIndex += 1;
+  if (slideIndex > 3) {
+    slideIndex = 0;
+  }
+  carousel.scrollTo((slideWidth + gap) * slideIndex, 0);
+}
+
+let autoSlideInterval = setInterval(slideFunc, 3000);
+let autoSlideTimeout = null;
+
+const delayAutoSliding = () => {
+  clearTimeout(autoSlideTimeout);
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = null;
+
+  autoSlideTimeout = setTimeout(() => {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(slideFunc, 3000);
+  }, 2000);
+}
 
 
+carousel.addEventListener('click', () => {
+  delayAutoSliding();
+});
 
+// VIDEO CHANGER
+const smallVideoBoxes = document.querySelectorAll('.clickcatcher');
+const largeVideoBox = document.querySelector('.animal__video-large');
 
+function replaceVideo(element) {
+  const currentlyActiveVideo = largeVideoBox.firstElementChild.attributes.src.value;
+  largeVideoBox.firstElementChild.attributes.src.value = element.firstElementChild.attributes.src.value;
+  element.firstElementChild.attributes.src.value = currentlyActiveVideo;
+  }
+
+smallVideoBoxes.forEach(element => {
+  element.addEventListener('click', () => replaceVideo(element));
+});
