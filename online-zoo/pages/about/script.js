@@ -101,7 +101,6 @@ howitworksSlider.addEventListener('click', function (event) {
 });
 
 const update = function(newActive) {
-  // номер элемента который будем делать активным
   const newActivePos = newActive.dataset.position;
   console.log(`newActivePos = ${newActivePos}`)
 
@@ -123,13 +122,14 @@ const update = function(newActive) {
 
 const getPos = function (current, active) {
   const diff = current - active;
-  console.log(`diff = current${current} - active ${active}`)
+  console.log(`diff = current - active (${diff} = ${current} - ${active})`)
 
   if (Math.abs(current - active) > 2) {
-    console.log(`return -current (${-current})`)
-    return -current
+    if (diff < 0) {
+      return (diff + 5)
+    }
+    return (diff - 5)
   }
-  console.log(`return diff ${diff}`)
   return diff;
 }
 
