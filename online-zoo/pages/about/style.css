@@ -327,28 +327,32 @@ body {
 }
 
 .howitworks__slider-element {
-  background-size: cover;
   border: 1px solid #FFFFFF;
 }
 
 .howitworks__slider-element:nth-child(1) {
   background: url(../../assets/images/howitworks-1eagle.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .howitworks__slider-element:nth-child(2) {
   background: url(../../assets/images/howitworks-2tiger.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .howitworks__slider-element:nth-child(3) {
   background: url(../../assets/images/howitworks-3panda.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .howitworks__slider-element:nth-child(4) {
   background: url(../../assets/images/howitworks-4monkey.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .howitworks__slider-element:nth-child(5) {
   background: url(../../assets/images/howitworks-5elephant.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .howitworks__slider-element[data-position="0"] {
@@ -533,6 +537,10 @@ body {
 
 /* howitworks styles end */
 
+.pets__heading {
+  margin-bottom: 60px;
+}
+
 /* pets in zoo slider */
 .pets__slider-div {
   /*background: red;*/
@@ -542,14 +550,15 @@ body {
   overflow: hidden;
   position: relative;
   width: 992px;
-  height: 630px;
+  height: 670px;
   z-index: 1;
+  margin-bottom: 30px;
 }
 
 .slides {
   display: flex;
   position: relative;
-  top: 0;
+  top: 20px;
   left: -992px;
   width: 10000px;
 }
@@ -587,7 +596,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 49px;
+  /*margin-bottom: 49px;*/
 }
 
 .pets__slider-content {
@@ -1774,6 +1783,7 @@ body.disable-scroll {
   z-index: 1;
   top: 85px;
   left: 76px;
+  width: 200px;
 }
 
 .pay-popup__form input {

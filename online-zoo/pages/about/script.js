@@ -115,7 +115,9 @@ howitworksSlider.addEventListener('click', function (event) {
 });
 
 const update = function(newActive) {
+  // номер элемента который будем делать активным
   const newActivePos = newActive.dataset.position;
+  console.log(`newActivePos = ${newActivePos}`)
 
   const current = howitworksSliderElems.find((elem) => elem.dataset.position == 0);
   const prev = howitworksSliderElems.find((elem) => elem.dataset.position == -1);
@@ -127,6 +129,7 @@ const update = function(newActive) {
 
   [current, prev, next, first, last].forEach(item => {
     let itemPos = item.dataset.position;
+    console.log(`itemPos = ${itemPos}`);
 
     item.dataset.position = getPos(itemPos, newActivePos)
   });
@@ -134,15 +137,17 @@ const update = function(newActive) {
 
 const getPos = function (current, active) {
   const diff = current - active;
+  console.log(`diff = current${current} - active ${active}`)
 
   if (Math.abs(current - active) > 2) {
+    console.log(`return -current (${-current})`)
     return -current
   }
-
+  console.log(`return diff ${diff}`)
   return diff;
 }
 
-// experimental piece
+// pets in zoo slider
 let slider = document.getElementById('slider'),
   sliderItems = document.getElementById('slides'),
   prev = document.querySelector('.pets__slider-prev'),
