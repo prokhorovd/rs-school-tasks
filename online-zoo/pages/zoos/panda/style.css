@@ -1270,7 +1270,8 @@ body.disable-scroll {
 .donate-popup__money-amount {
   width: 303px;
   height: 39px;
-  text-align: center;
+  text-align: left;
+  padding-left: 11px;
   margin-right: 4px;
 }
 
