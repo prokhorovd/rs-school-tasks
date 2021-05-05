@@ -1209,3 +1209,189 @@ main {
   }
 }
 /* footer styles end */
+
+/* popup windows styles start */
+
+body.disable-scroll {
+  overflow: hidden;
+}
+
+.popup-wrapper {
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/*donate screen 1*/
+.donate-popup {
+  position: fixed;
+  top: calc(50vh - 169px);
+  left: calc(50vw);
+  transform: translate(-50%, 0);
+  width: 630px;
+  height: 339px;
+  background-color: #fff;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donate-popup__form{
+  transform: translate(0, 10px);
+}
+
+.donate-popup__form select,
+.donate-popup__form input,
+.donate-popup__form textarea{
+  border: solid 1px #9CA498;
+  appearance: none;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.donate-popup__animal-selector {
+  width: 470px;
+  height: 39px;
+  background-color: #DFF5B0;
+  margin-bottom: 8px;
+  text-align-last: center;
+  background-image: url(../../../assets/icons/select-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: 21px;
+  background-position: 98% 50%;
+
+}
+
+.donate-popup__money-amount {
+  width: 303px;
+  height: 39px;
+  text-align: center;
+  margin-right: 4px;
+}
+
+.donate-popup__money-amount::-webkit-outer-spin-button,
+.donate-popup__money-amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.donate-popup__currency-selector {
+  width: 159px;
+  height: 39px;
+  margin-bottom: 8px;
+  text-align-last: center;
+}
+
+#donate-popup__text-field {
+  width: 470px;
+  height: 85px;
+  padding: 8px 11px;
+  margin-bottom: 15px;
+  resize: none;
+}
+
+.donate-popup__btn-next {
+  width: 168px;
+  height: 40px;
+  margin-bottom: 0;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/*pay popup*/
+.pay-popup {
+  position: fixed;
+  top: calc(50vh - 195px);
+  left: calc(50vw);
+  transform: translate(-50%, 0);
+  width: 630px;
+  height: 389px;
+  background-color: #fff;
+  z-index: 50;
+}
+
+.pay-popup__background {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.pay-popup__form {
+  position: relative;
+  z-index: 1;
+  top: 85px;
+  left: 76px;
+  width: 200px;
+}
+
+.pay-popup__form input {
+  height: 39px;
+  border: solid 1px #9CA498;
+  appearance: none;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.pay-popup__cardholder-name,
+.pay-popup__card-number {
+  width: 306px;
+  margin-bottom: 8px;
+}
+
+.pay-popup__card-month,
+.pay-popup__card-year {
+  width: 80px;
+  margin-bottom: 8px;
+}
+
+.pay-popup__cardholder-name {
+  margin-bottom: 91px;
+}
+
+
+.pay-popup__card-cvc {
+  position: absolute;
+  width: 75px;
+  height: 35px;
+  top: 88px;
+  left: 393px;
+}
+
+.pay-popup__btn {
+  width: 150px;
+  height: 40px;
+  margin-bottom: 0;
+  position: relative;
+  left: 80%;
+  /*transform: translate(-54%, 0);*/
+}
+
+/* reusable styles*/
+.popup-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 27px;
+  height: 27px;
+  background: url("../../../assets/icons/popup-close-ico.svg") center no-repeat;
+  z-index: 101;
+  transition: 0.3s;
+}
+
+.popup-close-btn:hover,
+.popup-close-btn:focus {
+  transform: scale(1.2);
+  opacity: 0.9;
+}
+
+.popup-hidden {
+  display: none;
+}
+/* popup windows styles end */

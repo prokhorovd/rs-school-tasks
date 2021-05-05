@@ -379,6 +379,53 @@
         </div>
       </div>
     </footer>
+    <div class="popup-wrapper popup-hidden">
+      <div class="donate-popup popup-hidden">
+        <form action="#" class="donate-popup__form">
+          <select name="donate-animal-selector"
+                  id="donate-popup__animal-selector"
+                  class="donate-popup__animal-selector">
+            <option disabled selected>Choose animal</option>
+            <option value="Alligator">Alligator</option>
+            <option value="Panda">Panda</option>
+            <option value="Eagle">Eagle</option>
+            <option value="Gorilla">Gorilla</option>
+          </select>
+          <br>
+          <input type="number" min="1" max="9999" placeholder="Amount" class="donate-popup__money-amount" required>
+          <select name="donate-currency-selector"
+                  id="donate-popup__currency-selector"
+                  class="donate-popup__currency-selector">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+          </select>
+          <br>
+          <textarea name="donate-popup__content"
+                    id="donate-popup__text-field"
+                    placeholder="Your text here"
+                    maxlength="280"></textarea>
+          <br>
+          <button class="button donate-popup__btn-next">Next</button>
+        </form>
+        <div class="donate-popup__close popup-close-btn"></div>
+      </div>
+      <div class="pay-popup popup-hidden">
+        <img src="../../../assets/images/pay-background.png" alt="" class="pay-popup__background">
+        <form action="" class="pay-popup__form">
+          <input type="text" class="pay-popup__card-number" title="Please enter 16 digits of your card" pattern="[0-9]{16}" placeholder="Card Number" required>
+          <br>
+          <input type="text" class="pay-popup__card-month" title="Please enter month using 2 digits" pattern="^(0[1-9]|1[012])$" placeholder="MM" required>
+          <input type="text" class="pay-popup__card-year" title="Please enter year using 2 digits" pattern="[0-9]{2}" placeholder="YY" required>
+          <br>
+          <input type="text" class="pay-popup__cardholder-name" title="First and last name, each contain 2 or more letters" pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{2,})$" placeholder="Cardholder Name" required>
+          <br>
+          <input type="text" class="pay-popup__card-cvc" title="Please enter 3 digits of your CVC code" pattern="[0-9]{3}" placeholder="CVC" required>
+
+          <button class=" button pay-popup__btn">Donate</button>
+        </form>
+        <div class="pay-popup__close popup-close-btn"></div>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

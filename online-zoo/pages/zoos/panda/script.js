@@ -154,4 +154,70 @@ function showSidebar() {
 
 showSidebarButton.addEventListener('click', showSidebar);
 
-//.animal__sidebar_visible
+// POPUP WINDOWS
+
+const popupWrapper = document.querySelector(".popup-wrapper");
+const feedButton = document.querySelector('.animal__sidebar-feed');
+const donateButton = document.querySelector(".footer__button");
+const donatePopupWindow = document.querySelector(".donate-popup");
+const donateAmountField = document.querySelector(".donate-popup__money-amount");
+const donatePopupCloseBtn = document.querySelector(".donate-popup__close");
+const donatePopupNextBtn = document.querySelector(".donate-popup__form");
+const payPopupWindow = document.querySelector(".pay-popup");
+const payPopupCloseBtn = document.querySelector(".pay-popup__close");
+
+
+function showDonateWindow() {
+  document.body.classList.add('notScrollable');
+  popupWrapper.classList.remove('popup-hidden');
+  donatePopupWindow.classList.remove("popup-hidden");
+}
+
+function closeDonatePopup() {
+  document.querySelector(".donate-popup__form").reset();
+  document.body.classList.remove('notScrollable');
+  popupWrapper.classList.add('popup-hidden');
+  donatePopupWindow.classList.add("popup-hidden");
+}
+
+function showPayWindow() {
+  if (donateAmountField.validity.valid) {
+    closeDonatePopup()
+    document.body.classList.add('notScrollable');
+    popupWrapper.classList.remove('popup-hidden');
+    payPopupWindow.classList.remove("popup-hidden");
+  }
+}
+
+function closePayPopup() {
+  document.querySelector(".pay-popup__form").reset();
+  document.body.classList.remove('notScrollable');
+  popupWrapper.classList.add('popup-hidden');
+  payPopupWindow.classList.add("popup-hidden");
+}
+
+function closePopups() {
+  document.querySelector(".donate-popup__form").reset();
+  document.querySelector(".pay-popup__form").reset();
+  document.body.classList.remove('notScrollable');
+  popupWrapper.classList.add('popup-hidden');
+  donatePopupWindow.classList.add("popup-hidden");
+  payPopupWindow.classList.add("popup-hidden");
+
+}
+
+donateButton.addEventListener('click', showDonateWindow);
+feedButton.addEventListener('click', showDonateWindow);
+donatePopupCloseBtn.addEventListener('click', closeDonatePopup);
+donatePopupNextBtn.addEventListener('submit', function (event) {
+  event.preventDefault();
+  showPayWindow();
+});
+payPopupCloseBtn.addEventListener('click', closePayPopup);
+
+popupWrapper.addEventListener('click', (event) => {
+  if (event.target === popupWrapper) {
+    console.log('clicked')
+    closePopups();
+  }
+})
