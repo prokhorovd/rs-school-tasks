@@ -109,5 +109,5 @@ dist
 # vscode
 .vscode
 
-# idea
+# Webstorm files
 .idea
