@@ -1,3 +1,4 @@
+// POPUPS
 const feedbackButton = document.querySelector(".testimonials__button");
 const popupWrapper = document.querySelector(".popup-wrapper");
 const feedbackPopupWindow = document.querySelector(".feedback-popup");
@@ -10,7 +11,6 @@ const donatePopupNextBtn = document.querySelector(".donate-popup__form");
 const payPopupWindow = document.querySelector(".pay-popup");
 const payPopupCloseBtn = document.querySelector(".pay-popup__close");
 
-//FUNCTIONS
 function showFeedbackPopup() {
   document.body.classList.add('notScrollable');
   popupWrapper.classList.remove('popup-hidden');
@@ -65,8 +65,6 @@ function closePopups() {
 
 }
 
-
-// LISTENERS
 feedbackButton.addEventListener('click', showFeedbackPopup);
 feedbackPopupCloseBtn.addEventListener('click', closeFeedbackPopup);
 donateButton.addEventListener('click', showDonateWindow);
@@ -79,7 +77,7 @@ payPopupCloseBtn.addEventListener('click', closePayPopup);
 
 popupWrapper.addEventListener('click', (event) => {
   if (event.target === popupWrapper) {
-    console.log('clicked')
+    // console.log('clicked')
     closePopups();
   }
 })
@@ -102,7 +100,7 @@ howitworksSlider.addEventListener('click', function (event) {
 
 const update = function(newActive) {
   const newActivePos = newActive.dataset.position;
-  console.log(`newActivePos = ${newActivePos}`)
+  // console.log(`newActivePos = ${newActivePos}`)
 
   const current = howitworksSliderElems.find((elem) => elem.dataset.position == 0);
   const prev = howitworksSliderElems.find((elem) => elem.dataset.position == -1);
@@ -114,7 +112,7 @@ const update = function(newActive) {
 
   [current, prev, next, first, last].forEach(item => {
     let itemPos = item.dataset.position;
-    console.log(`itemPos = ${itemPos}`);
+    // console.log(`itemPos = ${itemPos}`);
 
     item.dataset.position = getPos(itemPos, newActivePos)
   });
@@ -122,7 +120,7 @@ const update = function(newActive) {
 
 const getPos = function (current, active) {
   const diff = current - active;
-  console.log(`diff = current - active (${diff} = ${current} - ${active})`)
+  // console.log(`diff = current - active (${diff} = ${current} - ${active})`)
 
   if (Math.abs(current - active) > 2) {
     if (diff < 0) {
@@ -133,18 +131,14 @@ const getPos = function (current, active) {
   return diff;
 }
 
-// pets in zoo slider
+// PETS IN ZOO SLIDER
 let slider = document.getElementById('slider'),
   sliderItems = document.getElementById('slides'),
   prev = document.querySelector('.pets__slider-prev'),
   next = document.querySelector('.pets__slider-next');
 
 function slide(wrapper, items, prev, next) {
-  let posX1 = 0,
-    posX2 = 0,
-    posInitial,
-    posFinal,
-    threshold = 100,
+  let posInitial,
     slides = items.getElementsByClassName('slide'),
     slidesLength = slides.length,
     slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
@@ -160,61 +154,12 @@ function slide(wrapper, items, prev, next) {
   items.insertBefore(cloneLast, firstSlide);
   wrapper.classList.add('loaded');
 
-  // // Mouse events
-  // items.onmousedown = dragStart;
-  //
-  // // Touch events
-  // items.addEventListener('touchstart', dragStart);
-  // items.addEventListener('touchend', dragEnd);
-  // items.addEventListener('touchmove', dragAction);
-
   // Click events
   prev.addEventListener('click', function () { shiftSlide(-1) });
   next.addEventListener('click', function () { shiftSlide(1) });
 
   // Transition events
   items.addEventListener('transitionend', checkIndex);
-
-  // function dragStart (e) {
-  //   e = e || window.event;
-  //   e.preventDefault();
-  //   posInitial = items.offsetLeft;
-  //
-  //   if (e.type == 'touchstart') {
-  //     posX1 = e.touches[0].clientX;
-  //   } else {
-  //     posX1 = e.clientX;
-  //     document.onmouseup = dragEnd;
-  //     document.onmousemove = dragAction;
-  //   }
-  // }
-  //
-  // function dragAction (e) {
-  //   e = e || window.event;
-  //
-  //   if (e.type == 'touchmove') {
-  //     posX2 = posX1 - e.touches[0].clientX;
-  //     posX1 = e.touches[0].clientX;
-  //   } else {
-  //     posX2 = posX1 - e.clientX;
-  //     posX1 = e.clientX;
-  //   }
-  //   items.style.left = (items.offsetLeft - posX2) + "px";
-  // }
-  //
-  // function dragEnd (e) {
-  //   posFinal = items.offsetLeft;
-  //   if (posFinal - posInitial < -threshold) {
-  //     shiftSlide(1, 'drag');
-  //   } else if (posFinal - posInitial > threshold) {
-  //     shiftSlide(-1, 'drag');
-  //   } else {
-  //     items.style.left = (posInitial) + "px";
-  //   }
-  //
-  //   document.onmouseup = null;
-  //   document.onmousemove = null;
-  // }
 
   function shiftSlide(dir, action) {
     items.classList.add('shifting');
@@ -246,7 +191,6 @@ function slide(wrapper, items, prev, next) {
       items.style.left = -(1 * slideSize) + "px";
       index = 0;
     }
-
     allowShift = true;
   }
 }
