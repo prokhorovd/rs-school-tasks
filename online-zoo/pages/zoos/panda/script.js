@@ -1,5 +1,5 @@
 function toggleSpoiler(spoilerElem, duration = 200) {
-  let spoilerBody = spoilerElem.querySelector('.information__accordeon-content');
+  let spoilerBody = spoilerElem.querySelector('.information__accordion-content');
   let isCollapsing = spoilerElem.classList.contains('expanded');
   spoilerElem.classList.toggle('expanded', !isCollapsing);
   slideReveal(spoilerBody, !isCollapsing, { duration: duration });
@@ -56,21 +56,21 @@ function getHeight(el) {
 
 function changeSpoilerIco(element) {
   if (element.childNodes.item(1).attributes.src.value.includes('up')) {
-    element.childNodes.item(1).setAttribute('src', '../../../assets/icons/accordeon-arrow-down.svg');
+    element.childNodes.item(1).setAttribute('src', '../../../assets/icons/accordion-arrow-down.svg');
   } else {
-    element.childNodes.item(1).setAttribute('src', '../../../assets/icons/accordeon-arrow-up.svg');
+    element.childNodes.item(1).setAttribute('src', '../../../assets/icons/accordion-arrow-up.svg');
   }
 }
 
 function setHeight(element) {
   if (element.attributes.class.value.includes('closed')) {
-    element.classList.remove('information__accordeon-element_closed')
+    element.classList.remove('information__accordion-element_closed')
   } else {
-    setTimeout(() => element.classList.add('information__accordeon-element_closed'), 400);
+    setTimeout(() => element.classList.add('information__accordion-element_closed'), 400);
   }
 }
 
-// document.querySelectorAll('.accordeon-arrow').forEach(element => {
+// document.querySelectorAll('.accordion-arrow').forEach(element => {
 //   element.addEventListener('click', e => {
 //     setHeight(element.parentNode);
 //     toggleSpoiler(element.parentNode);
@@ -78,7 +78,7 @@ function setHeight(element) {
 //   });
 // });
 
-document.querySelectorAll('.information__accordeon-element').forEach(element => {
+document.querySelectorAll('.information__accordion-element').forEach(element => {
   element.addEventListener('click', e => {
     setHeight(element);
     toggleSpoiler(element);
@@ -129,7 +129,7 @@ carousel.addEventListener('click', () => {
 });
 
 // VIDEO CHANGER
-const smallVideoBoxes = document.querySelectorAll('.clickcatcher');
+const smallVideoBoxes = document.querySelectorAll('.animals__iframe-wrapper');
 const largeVideoBox = document.querySelector('.animal__video-large');
 
 function replaceVideo(element) {
