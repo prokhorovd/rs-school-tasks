@@ -252,6 +252,7 @@ main {
   position: fixed;
   top: 237px;
   z-index: 2;
+  transition: 0.4s;
 }
 
 .animal__sidebar-wrapper {
@@ -663,6 +664,16 @@ main {
     width: 140px;
     height: 82px;
   }
+}
+
+/*sidebar button action*/
+
+.animal__sidebar_visible {
+  transform: translate(0);
+}
+
+.animal__sidebar-switcher_hidden {
+  display: none;
 }
 
 /* animal styles end */

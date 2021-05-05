@@ -141,3 +141,17 @@ function replaceVideo(element) {
 smallVideoBoxes.forEach(element => {
   element.addEventListener('click', () => replaceVideo(element));
 });
+
+// SIDEBAR BUTTON
+
+const showSidebarButton = document.querySelector('.animal__sidebar-switcher');
+const sidebar = document.querySelector('.animal__sidebar');
+
+function showSidebar() {
+  sidebar.classList.add('animal__sidebar_visible');
+  showSidebarButton.classList.add('animal__sidebar-switcher_hidden');
+}
+
+showSidebarButton.addEventListener('click', showSidebar);
+
+//.animal__sidebar_visible
