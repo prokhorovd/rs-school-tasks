@@ -70,11 +70,19 @@ function setHeight(element) {
   }
 }
 
-document.querySelectorAll('.accordeon-arrow').forEach(element => {
+// document.querySelectorAll('.accordeon-arrow').forEach(element => {
+//   element.addEventListener('click', e => {
+//     setHeight(element.parentNode);
+//     toggleSpoiler(element.parentNode);
+//     changeSpoilerIco(element);
+//   });
+// });
+
+document.querySelectorAll('.information__accordeon-element').forEach(element => {
   element.addEventListener('click', e => {
-    setHeight(element.parentNode);
-    toggleSpoiler(element.parentNode);
-    changeSpoilerIco(element);
+    setHeight(element);
+    toggleSpoiler(element);
+    changeSpoilerIco(element.childNodes.item(3));
   });
 });
 
