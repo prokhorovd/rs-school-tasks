@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar-menu {
+  position: absolute;
+  left: 0;
+}
+
+.sidebar-menu__list {
+  list-style: none;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: navajowhite;
+  opacity: 0.8;
+  height: 100vh;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidebar-menu__overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.btn-menu {
+  justify-self: flex-start;
+}
+
+.active {
+  color: indianred;
+}
+
+.active:hover {
+  color: red;
+}
