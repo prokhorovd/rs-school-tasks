@@ -30,16 +30,15 @@ function closeSidebar(): void {
 export class Header extends BaseComponent {
   constructor(private readonly rootElement: HTMLElement | null) {
     super('header', ['header']);
-    // todo sidebar navigation menu
+    // sidebar navigation menu
     const navigation = new BaseComponent('nav', ['sidebar-menu']);
     const navigationList = new BaseComponent('ul', ['sidebar-menu__list', 'nav', 'flex-column']);
     const navigationCloseBtn = new BaseComponent('button', ['btn', 'btn-menu']);
-    const navigationOverlay = new BaseComponent('div', ['sidebar-menu__overlay']);
     navigationCloseBtn.element.setAttribute('id', 'sidebar-menu__btn-close');
     navigationCloseBtn.element.innerText = 'Close Menu';
     navigationCloseBtn.element.addEventListener('click', closeSidebar);
     navigationList.element.appendChild(navigationCloseBtn.render());
-    const mainMenuItem = createMenuList('Main Menu');
+    const mainMenuItem = createMenuList('Main Page');
     navigationList.element.appendChild(mainMenuItem);
     // create menu items using data from appSettings.ts
     for (let i = 0; i < categoryNameList.length; i++) {
@@ -47,6 +46,8 @@ export class Header extends BaseComponent {
       navigationList.element.appendChild(menuItem);
     }
     navigation.element.appendChild(navigationList.render());
+    const navigationOverlay = new BaseComponent('div', ['sidebar-menu__overlay']);
+    navigationOverlay.element.addEventListener('click', closeSidebar);
     navigation.element.appendChild(navigationOverlay.render());
     // open menu button
     const navigationOpenBtn = new BaseComponent('button', ['btn', 'btn-menu']);
@@ -55,8 +56,17 @@ export class Header extends BaseComponent {
     navigationOpenBtn.element.addEventListener('click', openSidebar);
     navigation.element.appendChild(navigationOpenBtn.render());
     this.element.appendChild(navigation.render());
-    // todo play/restart buttons
-    // todo change app mode button
+    // // play/restart buttons
+    // const playBtn = new BaseComponent('button', ['btn', 'btn-play']);
+    // playBtn.element.innerText = 'Play';
+    // const restartBtn = new BaseComponent('button', ['btn', 'btn-restart']);
+    // restartBtn.element.innerText = 'Restart';
+    // this.element.appendChild(playBtn.render());
+    // this.element.appendChild(restartBtn.render());
+    // change app mode button
+    const changeModeBtn = new BaseComponent('button', ['btn', 'btn-change-mode']);
+    changeModeBtn.element.innerText = 'Change Mode';
+    this.element.appendChild(changeModeBtn.render());
   }
 
   render(): HTMLElement {
