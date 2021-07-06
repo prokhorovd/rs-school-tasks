@@ -10,7 +10,10 @@ export class App extends BaseComponent {
   render() {
     // this.rootElement?.appendChild(this.element);
     this.rootElement?.appendChild(new Header(document.body).render());
-    this.rootElement?.appendChild(new ControlPanel(document.body).render());
+    const main = new BaseComponent('main', ['main']);
+    main.element.appendChild(new ControlPanel(document.body).render());
+    // this.rootElement?.appendChild(new ControlPanel(document.body).render());
+    this.rootElement?.appendChild(main.render());
     return this.element;
   }
 }

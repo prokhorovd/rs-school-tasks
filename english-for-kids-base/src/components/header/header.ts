@@ -1,13 +1,13 @@
 import './header.css';
 import { BaseComponent } from '../baseComponent';
-import { categoryNameList } from '../../appSettings';
+import { categoriesList } from '../../appSettings';
 
 // create one menu item
-function createMenuList(categoryName: string): HTMLElement {
+function createMenuList(categoryName: string, link: string): HTMLElement {
   // Name can contain only one word
   const newMenuItem = new BaseComponent('li', ['nav-item', 'sidebar-menu__item']);
   const newMenuItemLink = new BaseComponent('a', ['nav-link']);
-  newMenuItemLink.element.setAttribute('href', `#${categoryName.split(' ')[0].toLowerCase()}`);
+  newMenuItemLink.element.setAttribute('href', `${link}`);
   newMenuItemLink.element.innerText = `${categoryName}`;
   newMenuItem.element.appendChild(newMenuItemLink.render());
   return newMenuItem.render();
@@ -38,11 +38,11 @@ export class Header extends BaseComponent {
     navigationCloseBtn.element.innerText = 'Close Menu';
     navigationCloseBtn.element.addEventListener('click', closeSidebar);
     navigationList.element.appendChild(navigationCloseBtn.render());
-    const mainMenuItem = createMenuList('Main Page');
+    const mainMenuItem = createMenuList('Main Page', '#main');
     navigationList.element.appendChild(mainMenuItem);
     // create menu items using data from appSettings.ts
-    for (let i = 0; i < categoryNameList.length; i++) {
-      const menuItem = createMenuList(`${categoryNameList[i]}`);
+    for (let i = 0; i < categoriesList.length; i++) {
+      const menuItem = createMenuList(`${categoriesList[i].name}`, `${categoriesList[i].link}`);
       navigationList.element.appendChild(menuItem);
     }
     navigation.element.appendChild(navigationList.render());
