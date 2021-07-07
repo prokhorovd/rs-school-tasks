@@ -1,0 +1,7 @@
+.category-card {
+  cursor: pointer;
+}
+
+.category-card__img {
+  max-height: 150px;
+}

@@ -1,38 +1,52 @@
 // export const categoryNameList = ['Food', 'Colors', 'Nature', 'Animals'];
 
+export interface Category {
+  name: string,
+  link: string,
+  image: string,
+}
+
 // 8 categories
 export const categoriesList = [
   {
     name: 'Action (set A)',
     link: '#action-a',
+    image: 'img/dance.jpg',
   },
   {
     name: 'Action (set B)',
     link: '#action-b',
+    image: 'img/swim.jpg',
   },
   {
     name: 'Animals (set A)',
     link: '#animals-a',
+    image: 'img/cat.jpg',
   },
   {
     name: 'Animals (set B)',
     link: '#animals-b',
+    image: 'img/bird.jpg',
   },
   {
     name: 'Clothes',
     link: '#clothes',
+    image: 'img/shoe.jpg',
   },
   {
     name: 'Emotions',
     link: '#emotions',
+    image: 'img/sad.jpg',
   },
   {
     name: 'Food',
     link: '#food',
+    image: 'img/banana.png',
   },
   {
     name: 'Colors',
     link: '#colors',
+    image: 'img/black.jpg',
   },
 ];
 
