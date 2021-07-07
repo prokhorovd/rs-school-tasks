@@ -36,11 +36,17 @@ export function generateWordCard(card: Card): HTMLElement {
   // front text
   const cardFrontText = new BaseComponent('div', ['card__text']);
   cardFrontText.element.innerText = card.word;
+  if (settings.gameMode === 'play') {
+    cardFrontText.element.classList.add('hidden');
+  }
   cardFront.element.setAttribute('style', `background-image: url(./${card.image})`);
   cardFront.element.appendChild(cardFrontText.render());
   // back text
   const cardBackText = new BaseComponent('div', ['card__text']);
   cardBackText.element.innerText = card.translation;
+  if (settings.gameMode === 'play') {
+    cardBackText.element.classList.add('hidden');
+  }
   cardBack.element.setAttribute('style', `background-image: url(./${card.image})`);
   cardBack.element.appendChild(cardBackText.render());
   // rotate button
@@ -50,6 +56,9 @@ export function generateWordCard(card: Card): HTMLElement {
   cardRotateButton.element.addEventListener('click', () => flipCard(card.word));
   // when card is flipped and mouse moved out - flip back
   newlyGenCard.element.addEventListener('mouseleave', () => unflipCard(card.word));
+  if (settings.gameMode === 'play') {
+    cardRotateButton.element.classList.add('hidden');
+  }
   // combine elements
   cardItem.element.appendChild(cardFront.render());
   cardItem.element.appendChild(cardBack.render());

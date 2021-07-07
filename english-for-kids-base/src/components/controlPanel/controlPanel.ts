@@ -20,6 +20,7 @@ export class ControlPanel extends BaseComponent {
     // game points field
     const pointsField = new BaseComponent('div', ['control-panel__points']);
     pointsField.element.innerText = 'Points';
+    pointsField.element.classList.add('hidden');
     this.element.appendChild(pointsField.render());
   }
 

@@ -48,6 +48,7 @@
 .card__rotate {
   position: absolute;
   background-size: contain;
+  background-color: #fff;
   width: 30px;
   height: 30px;
   bottom: 0;
