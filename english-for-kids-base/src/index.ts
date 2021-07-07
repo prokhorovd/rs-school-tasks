@@ -8,5 +8,6 @@ import { setRouting } from './routing';
 
 window.onload = () => {
   new App(document.body).render();
+  window.location.hash = 'main';
   setRouting(window);
 };

@@ -1,17 +1,8 @@
 import './header.css';
 import { BaseComponent } from '../baseComponent';
 import { categoriesList } from '../../appSettings';
+import { changeGameMode } from '../../other/changeGameMode';
 
-// create one menu item
-function createMenuList(categoryName: string, link: string): HTMLElement {
-  // Name can contain only one word
-  const newMenuItem = new BaseComponent('li', ['nav-item', 'sidebar-menu__item']);
-  const newMenuItemLink = new BaseComponent('a', ['nav-link']);
-  newMenuItemLink.element.setAttribute('href', `${link}`);
-  newMenuItemLink.element.innerText = `${categoryName}`;
-  newMenuItem.element.appendChild(newMenuItemLink.render());
-  return newMenuItem.render();
-}
 
 function openSidebar(): void {
   const sidebarMenu = document.querySelector('.sidebar-menu__list') as HTMLElement;
@@ -25,6 +16,18 @@ function closeSidebar(): void {
   const sidebarMenuOverlay = document.querySelector('.sidebar-menu__overlay') as HTMLElement;
   sidebarMenu.style.width = '0';
   sidebarMenuOverlay.style.display = 'none';
+}
+
+// create one menu item
+function createMenuList(categoryName: string, link: string): HTMLElement {
+  // Name can contain only one word
+  const newMenuItem = new BaseComponent('li', ['nav-item', 'sidebar-menu__item']);
+  const newMenuItemLink = new BaseComponent('a', ['nav-link']);
+  newMenuItemLink.element.setAttribute('href', `${link}`);
+  newMenuItemLink.element.innerText = `${categoryName}`;
+  newMenuItemLink.element.addEventListener('click', () => closeSidebar());
+  newMenuItem.element.appendChild(newMenuItemLink.render());
+  return newMenuItem.render();
 }
 
 export class Header extends BaseComponent {
@@ -56,16 +59,10 @@ export class Header extends BaseComponent {
     navigationOpenBtn.element.addEventListener('click', openSidebar);
     navigation.element.appendChild(navigationOpenBtn.render());
     this.element.appendChild(navigation.render());
-    // // play/restart buttons
-    // const playBtn = new BaseComponent('button', ['btn', 'btn-play']);
-    // playBtn.element.innerText = 'Play';
-    // const restartBtn = new BaseComponent('button', ['btn', 'btn-restart']);
-    // restartBtn.element.innerText = 'Restart';
-    // this.element.appendChild(playBtn.render());
-    // this.element.appendChild(restartBtn.render());
     // change app mode button
     const changeModeBtn = new BaseComponent('button', ['btn', 'btn-change-mode']);
-    changeModeBtn.element.innerText = 'Change Mode';
+    changeModeBtn.element.innerText = 'Train Mode';
+    changeModeBtn.element.addEventListener('click', changeGameMode);
     this.element.appendChild(changeModeBtn.render());
   }
 

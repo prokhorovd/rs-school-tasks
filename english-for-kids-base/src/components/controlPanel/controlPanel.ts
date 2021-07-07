@@ -11,8 +11,10 @@ export class ControlPanel extends BaseComponent {
     // play/restart buttons
     const playBtn = new BaseComponent('button', ['btn', 'btn-play']);
     playBtn.element.innerText = 'Play';
+    playBtn.element.classList.add('hidden');
     const restartBtn = new BaseComponent('button', ['btn', 'btn-restart']);
     restartBtn.element.innerText = 'Restart';
+    restartBtn.element.classList.add('hidden');
     this.element.appendChild(playBtn.render());
     this.element.appendChild(restartBtn.render());
     // game points field

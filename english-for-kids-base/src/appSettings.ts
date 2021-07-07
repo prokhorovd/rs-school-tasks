@@ -4,7 +4,23 @@ export interface Category {
   name: string,
   link: string,
   image: string,
+  categoryNo: number,
 }
+
+export interface Card {
+  word: string,
+  translation: string,
+  image: string,
+  audioSrc: string,
+}
+
+export interface Settings {
+  gameMode: string
+}
+
+export const settings: Settings = {
+  gameMode: 'train',
+};
 
 // 8 categories
 export const categoriesList = [
@@ -12,41 +28,49 @@ export const categoriesList = [
     name: 'Action (set A)',
     link: '#action-a',
     image: 'img/dance.jpg',
+    categoryNo: 0,
   },
   {
     name: 'Action (set B)',
     link: '#action-b',
     image: 'img/swim.jpg',
+    categoryNo: 1,
   },
   {
     name: 'Animals (set A)',
     link: '#animals-a',
     image: 'img/cat.jpg',
+    categoryNo: 2,
   },
   {
     name: 'Animals (set B)',
     link: '#animals-b',
     image: 'img/bird.jpg',
+    categoryNo: 3,
   },
   {
     name: 'Clothes',
     link: '#clothes',
     image: 'img/shoe.jpg',
+    categoryNo: 4,
   },
   {
     name: 'Emotions',
     link: '#emotions',
     image: 'img/sad.jpg',
+    categoryNo: 5,
   },
   {
     name: 'Food',
     link: '#food',
     image: 'img/banana.png',
+    categoryNo: 6,
   },
   {
     name: 'Colors',
     link: '#colors',
     image: 'img/black.jpg',
+    categoryNo: 7,
   },
 ];
 
