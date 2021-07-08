@@ -3,7 +3,6 @@ import { BaseComponent } from '../baseComponent';
 import { categoriesList } from '../../appSettings';
 import { changeGameMode } from '../../other/changeGameMode';
 
-
 function openSidebar(): void {
   const sidebarMenu = document.querySelector('.sidebar-menu__list') as HTMLElement;
   const sidebarMenuOverlay = document.querySelector('.sidebar-menu__overlay') as HTMLElement;
@@ -61,7 +60,7 @@ export class Header extends BaseComponent {
     this.element.appendChild(navigation.render());
     // change app mode button
     const changeModeBtn = new BaseComponent('button', ['btn', 'btn-change-mode']);
-    changeModeBtn.element.innerText = 'Train Mode';
+    changeModeBtn.element.innerText = 'Train Mode is active';
     changeModeBtn.element.addEventListener('click', changeGameMode);
     this.element.appendChild(changeModeBtn.render());
   }

@@ -22,6 +22,16 @@ export const settings: Settings = {
   gameMode: 'train',
 };
 
+export const gameData = {
+  currentCategory: 0,
+  currentCard: 0,
+  guessCounter: 0,
+  mistakesCounter: 0,
+  cardsInCategory: 8,
+  currentStep: 0,
+  shuffledCardsOrder: [1, 2],
+};
+
 // 8 categories
 export const categoriesList = [
   {

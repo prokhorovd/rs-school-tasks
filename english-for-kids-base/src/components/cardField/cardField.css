@@ -7,6 +7,7 @@
 }
 
 .card-container {
+  display: inline-block;
   width: 310px;
 }
 
@@ -57,4 +58,8 @@
 
 .hidden {
   display: none;
+}
+
+.guessed {
+  pointer-events: none;
 }

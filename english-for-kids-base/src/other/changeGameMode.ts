@@ -13,7 +13,7 @@ export function changeGameMode() {
 
 function trainMode() {
   const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
-  changeModeButton.innerText = 'Train Mode';
+  changeModeButton.innerText = 'Train Mode is active';
   const playButton = document.querySelector('.btn-play') as HTMLElement;
   const restartButton = document.querySelector('.btn-restart') as HTMLElement;
   const pointsPanel = document.querySelector('.control-panel__points') as HTMLElement;
@@ -31,16 +31,19 @@ function trainMode() {
 
 function playMode() {
   const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
-  changeModeButton.innerText = 'Play Mode';
+  changeModeButton.innerText = 'Play Mode is active';
   // show game control buttons
   const playButton = document.querySelector('.btn-play') as HTMLElement;
   const restartButton = document.querySelector('.btn-restart') as HTMLElement;
   const pointsPanel = document.querySelector('.control-panel__points') as HTMLElement;
-  playButton.classList.remove('hidden');
-  restartButton.classList.remove('hidden');
-  pointsPanel.classList.remove('hidden');
+  // playButton.classList.remove('hidden');
+  // restartButton.classList.remove('hidden');
+  // pointsPanel.classList.remove('hidden');
   // remove controls from cards
   if (window.location.hash !== '#main') {
+    playButton.classList.remove('hidden');
+    restartButton.classList.remove('hidden');
+    pointsPanel.classList.remove('hidden');
     const cardsDescriptionFields = document.querySelectorAll('.card__text');
     cardsDescriptionFields.forEach((element) => element.classList.add('hidden'));
     const cardsRotationButtons = document.querySelectorAll('.card__rotate');
