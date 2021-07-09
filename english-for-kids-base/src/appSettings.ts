@@ -73,7 +73,7 @@ export const categoriesList = [
   {
     name: 'Food',
     link: '#food',
-    image: 'img/banana.png',
+    image: 'img/banana.jpg',
     categoryNo: 6,
   },
   {
@@ -400,10 +400,10 @@ export const cardsList = [
       audioSrc: 'audio/banana.mp3',
     },
     {
-      word: 'fish',
-      translation: 'рыба',
-      image: 'img/fish.jpg',
-      audioSrc: 'audio/fish.mp3',
+      word: 'avocado',
+      translation: 'авокадо',
+      image: 'img/avocado.jpg',
+      audioSrc: 'audio/avocado.mp3',
     },
     {
       word: 'bread',
@@ -430,10 +430,10 @@ export const cardsList = [
       audioSrc: 'audio/cabbage.mp3',
     },
     {
-      word: 'water',
-      translation: 'вода',
-      image: 'img/water.jpg',
-      audioSrc: 'audio/water.mp3',
+      word: 'carrot',
+      translation: 'морковь',
+      image: 'img/carrot.jpg',
+      audioSrc: 'audio/carrot.mp3',
     },
   ],
   // Colors

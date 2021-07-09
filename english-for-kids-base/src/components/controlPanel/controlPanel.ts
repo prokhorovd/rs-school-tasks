@@ -1,6 +1,6 @@
 import './controlPanel.css';
 import { BaseComponent } from '../baseComponent';
-import {resetGame, startGame} from '../game/game';
+import { resetGame, startGame } from '../game/game';
 import { settings } from '../../appSettings';
 
 function toggleGameButtons() {

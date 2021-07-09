@@ -1,6 +1,6 @@
 import { cardsList, categoriesList, gameData } from '../../appSettings';
 import { drawWordCards } from '../../routing';
-import {BaseComponent} from "../baseComponent";
+import { BaseComponent } from '../baseComponent';
 
 const sayWord = function () {
   const currentCard = gameData.shuffledCardsOrder[gameData.currentStep];
