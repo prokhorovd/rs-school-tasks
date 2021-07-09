@@ -1,4 +1,5 @@
 import { settings } from '../appSettings';
+import {resetGame} from "../components/game/game";
 
 export function changeGameMode() {
   if (settings.gameMode === 'train') {
@@ -48,6 +49,7 @@ function playMode() {
     cardsDescriptionFields.forEach((element) => element.classList.add('hidden'));
     const cardsRotationButtons = document.querySelectorAll('.card__rotate');
     cardsRotationButtons.forEach((element) => element.classList.add('hidden'));
+    resetGame();
   }
 }
 

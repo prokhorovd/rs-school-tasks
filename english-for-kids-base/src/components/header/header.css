@@ -41,3 +41,78 @@ header {
 .active:hover {
   color: red;
 }
+
+/*game mode switch*/
+.game-mode-switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.game-mode-switch input {display:none;}
+
+.game-mode-switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5e9ce5;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.game-mode-switch__slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.game-mode-switch__input:checked + .game-mode-switch__slider {
+  background-color: #2ab934;
+}
+
+.game-mode-switch__input:focus + .game-mode-switch__slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.game-mode-switch__input:checked + .game-mode-switch__slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.play
+{
+  display: none;
+}
+
+.play, .train
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+.game-mode-switch__input:checked + .game-mode-switch__slider .play {
+  display: block;
+}
+
+.game-mode-switch__input:checked + .game-mode-switch__slider .train {
+  display: none;
+}

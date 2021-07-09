@@ -67,7 +67,9 @@ const checkCard = function (id: string) {
     drawStar(true);
     console.log(gameData.currentStep, gameData.cardsInCategory);
     if (gameData.currentStep < gameData.cardsInCategory - 1) {
-      nextCard();
+      matchSound.onended = function () {
+        nextCard();
+      };
     } else {
       endGame();
     }
@@ -81,6 +83,11 @@ const checkCard = function (id: string) {
   }
 };
 
+const resetPointsField = function () {
+  const pointsField = document.querySelector('.control-panel__points') as HTMLElement;
+  pointsField.innerHTML = '';
+};
+
 export const resetGame = function () {
   gameData.currentCategory = 0;
   gameData.guessCounter = 0;
@@ -88,6 +95,7 @@ export const resetGame = function () {
   gameData.cardsInCategory = 8;
   gameData.currentStep = 0;
   gameData.shuffledCardsOrder = [];
+  resetPointsField();
   drawWordCards();
 };
 

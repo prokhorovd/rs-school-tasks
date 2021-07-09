@@ -63,6 +63,19 @@ export class Header extends BaseComponent {
     changeModeBtn.element.innerText = 'Train Mode is active';
     changeModeBtn.element.addEventListener('click', changeGameMode);
     this.element.appendChild(changeModeBtn.render());
+    // change app mode switcher
+    const changeModeSliderSwitch = new BaseComponent('label', ['game-mode-switch']);
+    const changeModeSliderInput = new BaseComponent('input', ['game-mode-switch__input']);
+    changeModeSliderInput.element.setAttribute('type', 'checkbox');
+    changeModeSliderInput.element.setAttribute('id', 'game-mode-switcher');
+    changeModeSliderInput.element.addEventListener('change', changeGameMode)
+    const changeModeSliderContainer = new BaseComponent('div', ['game-mode-switch__slider']);
+    changeModeSliderContainer.element.innerHTML = `
+        <span class="play">Play</span>
+        <span class="train">Train</span>`;
+    changeModeSliderSwitch.element.appendChild(changeModeSliderInput.render());
+    changeModeSliderSwitch.element.appendChild(changeModeSliderContainer.render());
+    this.element.appendChild(changeModeSliderSwitch.render());
   }
 
   render(): HTMLElement {

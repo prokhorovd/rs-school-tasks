@@ -1,6 +1,7 @@
 import { generateCategoryCards } from './components/categoryCards/categoryCards';
 import { categoriesList, settings } from './appSettings';
 import { generateWordCards } from './components/wordCards/wordCards';
+import {resetGame} from "./components/game/game";
 
 export const drawWordCards = function () {
   const cardField = document.querySelector('.card-field') as HTMLElement;
@@ -38,6 +39,7 @@ export function setRouting(rootElement: Window) {
       //   }
       // }
       drawWordCards();
+      resetGame();
     }
   });
 }
