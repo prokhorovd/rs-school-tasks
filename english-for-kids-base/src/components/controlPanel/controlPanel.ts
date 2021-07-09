@@ -41,7 +41,7 @@ export class ControlPanel extends BaseComponent {
     this.element.appendChild(restartBtn.render());
     // game points field
     const pointsField = new BaseComponent('div', ['control-panel__points']);
-    pointsField.element.innerText = 'Points';
+    // pointsField.element.innerText = 'Points';
     pointsField.element.classList.add('hidden');
     this.element.appendChild(pointsField.render());
     // todo show or hide buttons

@@ -12,3 +12,27 @@
 .btn-restart {
   justify-self: end;
 }
+
+.control-panel__points {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  width: 600px;
+}
+
+.point-star {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.point-star-true {
+  background: url("../../../public/img/star-win.svg") center no-repeat;
+  background-size: contain;
+}
+
+.point-star-false {
+  background: url("../../../public/img/star.svg") center no-repeat;
+  background-size: contain;
+}

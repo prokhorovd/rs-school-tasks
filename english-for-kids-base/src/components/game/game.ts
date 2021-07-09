@@ -36,6 +36,19 @@ const endGame = function () {
   }, 3000);
 };
 
+const drawStar = function (guessed: boolean) {
+  const pointsField = document.querySelector('.control-panel__points') as HTMLElement;
+  const star = new BaseComponent('span', ['point-star']);
+  if (guessed) {
+    console.log('guessed');
+    star.element.classList.add('point-star-true');
+  } else {
+    console.log('not guessed');
+    star.element.classList.add('point-star-false');
+  }
+  pointsField.appendChild(star.render());
+};
+
 const checkCard = function (id: string) {
   // console.log(id);
   const currentCard = gameData.shuffledCardsOrder[gameData.currentStep];
@@ -51,6 +64,7 @@ const checkCard = function (id: string) {
     // sound of match
     const matchSound = new Audio('./audio/correct.mp3');
     matchSound.play();
+    drawStar(true);
     console.log(gameData.currentStep, gameData.cardsInCategory);
     if (gameData.currentStep < gameData.cardsInCategory - 1) {
       nextCard();
@@ -63,6 +77,7 @@ const checkCard = function (id: string) {
     // sound of error
     const errorSound = new Audio('./audio/error.mp3');
     errorSound.play();
+    drawStar(false);
   }
 };
 
