@@ -58,11 +58,11 @@ export class Header extends BaseComponent {
     navigationOpenBtn.element.addEventListener('click', openSidebar);
     navigation.element.appendChild(navigationOpenBtn.render());
     this.element.appendChild(navigation.render());
-    // change app mode button
-    const changeModeBtn = new BaseComponent('button', ['btn', 'btn-change-mode']);
-    changeModeBtn.element.innerText = 'Train Mode is active';
-    changeModeBtn.element.addEventListener('click', changeGameMode);
-    this.element.appendChild(changeModeBtn.render());
+    // change app mode button obsolete todo delete
+    // const changeModeBtn = new BaseComponent('button', ['btn', 'btn-change-mode']);
+    // changeModeBtn.element.innerText = 'Train Mode is active';
+    // changeModeBtn.element.addEventListener('click', changeGameMode);
+    // this.element.appendChild(changeModeBtn.render());
     // change app mode switcher
     const changeModeSliderSwitch = new BaseComponent('label', ['game-mode-switch']);
     const changeModeSliderInput = new BaseComponent('input', ['game-mode-switch__input']);

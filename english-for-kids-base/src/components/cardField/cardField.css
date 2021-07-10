@@ -1,14 +1,29 @@
 .category-card {
   cursor: pointer;
+  /*position: relative;*/
+  width: 18rem;
+  margin: 15px;
 }
 
 .category-card__img {
-  max-height: 150px;
+  /*max-height: 150px;*/
+}
+
+.category-card__link {
+  /*position: absolute;*/
+  /*background: whitesmoke;*/
+  /*left: 0;*/
 }
 
 .card-container {
   display: inline-block;
   width: 310px;
+}
+
+.card-field {
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: space-evenly;*/
 }
 
 .card {

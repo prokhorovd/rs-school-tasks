@@ -1,6 +1,8 @@
-import { settings } from '../appSettings';
+import {categoriesList, settings} from '../appSettings';
 import { resetGame } from '../components/game/game';
 import { drawWordCards } from '../routing';
+import {generateCategoryCards} from "../components/categoryCards/categoryCards";
+import {BaseComponent} from "../components/baseComponent";
 
 export function changeGameMode(): void {
   if (settings.gameMode === 'train') {
@@ -14,8 +16,8 @@ export function changeGameMode(): void {
 }
 
 function trainMode() {
-  const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
-  changeModeButton.innerText = 'Train Mode is active';
+  // const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
+  // changeModeButton.innerText = 'Train Mode is active';
   const playButton = document.querySelector('.btn-play') as HTMLElement;
   const restartButton = document.querySelector('.btn-repeat') as HTMLElement;
   const pointsPanel = document.querySelector('.control-panel__points') as HTMLElement;
@@ -28,13 +30,19 @@ function trainMode() {
     cardsDescriptionFields.forEach((element) => element.classList.remove('hidden'));
     const cardsRotationButtons = document.querySelectorAll('.card__rotate');
     cardsRotationButtons.forEach((element) => element.classList.remove('hidden'));
+    drawWordCards();
+  } else {
+    const rowCardWrapper = new BaseComponent('div', ['card-field__row', 'row', 'justify-content-around']);
+    generateCategoryCards(categoriesList, rowCardWrapper.element);
+    const cardField = document.querySelector('.card-field') as HTMLElement;
+    cardField.appendChild(rowCardWrapper.render());
   }
-  drawWordCards();
+  // drawWordCards();
 }
 
 function playMode() {
-  const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
-  changeModeButton.innerText = 'Play Mode is active';
+  // const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
+  // changeModeButton.innerText = 'Play Mode is active';
   // show game control buttons
   const playButton = document.querySelector('.btn-play') as HTMLElement;
   // const restartButton = document.querySelector('.btn-repeat') as HTMLElement;

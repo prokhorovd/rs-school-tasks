@@ -25,9 +25,9 @@ function unflipCard(id: string): void {
 }
 
 export function generateWordCard(card: Card): HTMLElement {
-  const newlyGenCard = new BaseComponent('div', ['card-container']);
+  const newlyGenCard = new BaseComponent('div', ['card-container', 'card']);
   // card
-  const cardItem = new BaseComponent('div', ['card']);
+  const cardItem = new BaseComponent('div', ['card__item']);
   cardItem.element.setAttribute('id', `${card.word}`);
   const cardFront = new BaseComponent('div', ['card__front']);
   // click listener for audio play

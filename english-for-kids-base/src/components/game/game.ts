@@ -53,7 +53,7 @@ const drawStar = (guessed: boolean) => {
 };
 
 const checkCard = (id: string) => {
-  // console.log(id);
+  // console.log('check card was pressed');
   const currentCard = gameData.shuffledCardsOrder[gameData.currentStep];
   // если пользователь кликает по названной карте
   if (id === cardsList[gameData.currentCategory][currentCard].word) {
@@ -93,6 +93,7 @@ const resetPointsField = () => {
 
 const drawField = (): void => {
   const cardField = document.querySelector('.card-field') as HTMLElement;
+  const rowCardWrapper = new BaseComponent('div', ['card-field__row', 'row', 'justify-content-around']);
   const pageHeading = document.querySelector('.control-panel__heading') as HTMLElement;
   cardField.innerHTML = '';
   // перебираем через список категорий
@@ -100,9 +101,10 @@ const drawField = (): void => {
     if (categoriesList[i].link === window.location.hash) {
       pageHeading.innerText = categoriesList[i].name;
       // генерируем карты для категории и рисуем на странице
-      generateWordCards(i, cardField);
+      generateWordCards(i, rowCardWrapper.element);
     }
   }
+  cardField.appendChild(rowCardWrapper.render());
 };
 
 export const resetGame = (): void => {
@@ -140,7 +142,7 @@ export function startGame(): void {
   // // называем слово
   sayWord();
   // добавим листенеры
-  const cardsOnPage = document.querySelectorAll('.card');
+  const cardsOnPage = document.querySelectorAll('.card__item');
   cardsOnPage.forEach((element) => {
     const cardId = element.id;
     element.addEventListener('click', () => checkCard(cardId));

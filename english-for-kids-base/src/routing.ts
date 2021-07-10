@@ -2,9 +2,11 @@ import { generateCategoryCards } from './components/categoryCards/categoryCards'
 import { categoriesList } from './appSettings';
 import { generateWordCards } from './components/wordCards/wordCards';
 import { resetGame } from './components/game/game';
+import { BaseComponent } from './components/baseComponent';
 
 export const drawWordCards = (): void => {
   const cardField = document.querySelector('.card-field') as HTMLElement;
+  const cardFieldRow = new BaseComponent('div', ['card-field__row', 'row', 'justify-content-around']);
   const pageHeading = document.querySelector('.control-panel__heading') as HTMLElement;
   cardField.innerHTML = '';
   // перебираем через список категорий
@@ -12,9 +14,10 @@ export const drawWordCards = (): void => {
     if (categoriesList[i].link === window.location.hash) {
       pageHeading.innerText = categoriesList[i].name;
       // генерируем карты для категории и рисуем на странице
-      generateWordCards(i, cardField);
+      generateWordCards(i, cardFieldRow.element);
     }
   }
+  cardField.appendChild(cardFieldRow.render());
 };
 
 export function setRouting(rootElement: Window): void {
@@ -35,9 +38,12 @@ export function setRouting(rootElement: Window): void {
     restartButton.classList.add('hidden');
     if (window.location.hash === '#main') {
       // console.log('main page');
+      const rowCardWrapper = new BaseComponent('div', ['card-field__row', 'row', 'justify-content-around']);
       cardField.innerHTML = '';
       pageHeading.innerText = 'Main Page';
-      generateCategoryCards(categoriesList, cardField);
+      // generateCategoryCards(categoriesList, cardField);
+      generateCategoryCards(categoriesList, rowCardWrapper.element);
+      cardField.appendChild(rowCardWrapper.render());
     } else {
       // cardField.innerHTML = '';
       // // перебираем через список категорий
