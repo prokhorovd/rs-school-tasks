@@ -16,7 +16,7 @@ function trainMode() {
   const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
   changeModeButton.innerText = 'Train Mode is active';
   const playButton = document.querySelector('.btn-play') as HTMLElement;
-  const restartButton = document.querySelector('.btn-restart') as HTMLElement;
+  const restartButton = document.querySelector('.btn-repeat') as HTMLElement;
   const pointsPanel = document.querySelector('.control-panel__points') as HTMLElement;
   playButton.classList.add('hidden');
   restartButton.classList.add('hidden');
@@ -35,7 +35,7 @@ function playMode() {
   changeModeButton.innerText = 'Play Mode is active';
   // show game control buttons
   const playButton = document.querySelector('.btn-play') as HTMLElement;
-  const restartButton = document.querySelector('.btn-restart') as HTMLElement;
+  // const restartButton = document.querySelector('.btn-repeat') as HTMLElement;
   const pointsPanel = document.querySelector('.control-panel__points') as HTMLElement;
   // playButton.classList.remove('hidden');
   // restartButton.classList.remove('hidden');
@@ -43,7 +43,7 @@ function playMode() {
   // remove controls from cards
   if (window.location.hash !== '#main') {
     playButton.classList.remove('hidden');
-    restartButton.classList.remove('hidden');
+    // restartButton.classList.remove('hidden');
     pointsPanel.classList.remove('hidden');
     const cardsDescriptionFields = document.querySelectorAll('.card__text');
     cardsDescriptionFields.forEach((element) => element.classList.add('hidden'));

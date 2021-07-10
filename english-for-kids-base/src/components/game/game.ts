@@ -2,7 +2,7 @@ import { cardsList, categoriesList, gameData } from '../../appSettings';
 import { drawWordCards } from '../../routing';
 import { BaseComponent } from '../baseComponent';
 
-const sayWord = function () {
+export const sayWord = function () {
   const currentCard = gameData.shuffledCardsOrder[gameData.currentStep];
   const wordAudio = new Audio(cardsList[gameData.currentCategory][currentCard].audioSrc);
   wordAudio.play();
@@ -31,6 +31,8 @@ const endGame = function () {
   }
   gameField.innerHTML = '';
   gameField.appendChild(resultScreen.render());
+  const repeatBtn = document.querySelector('.btn-repeat') as HTMLElement;
+  repeatBtn.classList.add('hidden');
   const delayedRedirect = setTimeout(() => {
     window.location.hash = '#main';
   }, 3000);
@@ -127,4 +129,8 @@ export function startGame() {
     const cardId = element.id;
     element.addEventListener('click', () => checkCard(cardId));
   });
+  const playBtn = document.querySelector('.btn-play') as HTMLElement;
+  const repeatBtn = document.querySelector('.btn-repeat') as HTMLElement;
+  playBtn.classList.add('hidden');
+  repeatBtn.classList.remove('hidden');
 }
