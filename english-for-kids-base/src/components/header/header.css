@@ -36,6 +36,7 @@ header {
 
 .active {
   color: indianred;
+  pointer-events: none;
 }
 
 .active:hover {

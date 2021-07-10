@@ -19,6 +19,16 @@ export const drawWordCards = (): void => {
 
 export function setRouting(rootElement: Window): void {
   rootElement.addEventListener('hashchange', () => {
+    // set active link in sidebar
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach((element) => {
+      if (element.getAttribute('href') === window.location.hash) {
+        element.classList.add('active');
+      } else {
+        element.classList.remove('active');
+      }
+    });
+    // draw page
     const cardField = document.querySelector('.card-field') as HTMLElement;
     const pageHeading = document.querySelector('.control-panel__heading') as HTMLElement;
     const restartButton = document.querySelector('.btn-repeat') as HTMLElement;
