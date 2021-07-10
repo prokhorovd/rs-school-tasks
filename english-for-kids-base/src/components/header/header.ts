@@ -68,7 +68,7 @@ export class Header extends BaseComponent {
     const changeModeSliderInput = new BaseComponent('input', ['game-mode-switch__input']);
     changeModeSliderInput.element.setAttribute('type', 'checkbox');
     changeModeSliderInput.element.setAttribute('id', 'game-mode-switcher');
-    changeModeSliderInput.element.addEventListener('change', changeGameMode)
+    changeModeSliderInput.element.addEventListener('change', changeGameMode);
     const changeModeSliderContainer = new BaseComponent('div', ['game-mode-switch__slider']);
     changeModeSliderContainer.element.innerHTML = `
         <span class="play">Play</span>

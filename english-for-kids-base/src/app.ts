@@ -8,7 +8,7 @@ export class App extends BaseComponent {
     super('div', ['app']);
   }
 
-  render() {
+  render(): HTMLElement {
     // this.rootElement?.appendChild(this.element);
     this.rootElement?.appendChild(new Header(document.body).render());
     const main = new BaseComponent('main', ['main']);

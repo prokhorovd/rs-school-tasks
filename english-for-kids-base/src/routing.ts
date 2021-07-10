@@ -1,9 +1,9 @@
 import { generateCategoryCards } from './components/categoryCards/categoryCards';
-import { categoriesList, settings } from './appSettings';
+import { categoriesList } from './appSettings';
 import { generateWordCards } from './components/wordCards/wordCards';
-import {resetGame} from "./components/game/game";
+import { resetGame } from './components/game/game';
 
-export const drawWordCards = function () {
+export const drawWordCards = (): void => {
   const cardField = document.querySelector('.card-field') as HTMLElement;
   const pageHeading = document.querySelector('.control-panel__heading') as HTMLElement;
   cardField.innerHTML = '';
@@ -17,10 +17,12 @@ export const drawWordCards = function () {
   }
 };
 
-export function setRouting(rootElement: Window) {
+export function setRouting(rootElement: Window): void {
   rootElement.addEventListener('hashchange', () => {
     const cardField = document.querySelector('.card-field') as HTMLElement;
     const pageHeading = document.querySelector('.control-panel__heading') as HTMLElement;
+    const restartButton = document.querySelector('.btn-repeat') as HTMLElement;
+    restartButton.classList.add('hidden');
     if (window.location.hash === '#main') {
       // console.log('main page');
       cardField.innerHTML = '';

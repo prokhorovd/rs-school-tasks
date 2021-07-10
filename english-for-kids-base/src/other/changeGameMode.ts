@@ -1,7 +1,8 @@
 import { settings } from '../appSettings';
-import {resetGame} from "../components/game/game";
+import { resetGame } from '../components/game/game';
+import { drawWordCards } from '../routing';
 
-export function changeGameMode() {
+export function changeGameMode(): void {
   if (settings.gameMode === 'train') {
     settings.gameMode = 'play';
     document.dispatchEvent(new CustomEvent('switchedToPlayMode'));
@@ -9,7 +10,7 @@ export function changeGameMode() {
     settings.gameMode = 'train';
     document.dispatchEvent(new CustomEvent('switchedToTrainMode'));
   }
-  console.log(`game mode is now ${settings.gameMode}`);
+  // console.log(`game mode is now ${settings.gameMode}`);
 }
 
 function trainMode() {
@@ -28,6 +29,7 @@ function trainMode() {
     const cardsRotationButtons = document.querySelectorAll('.card__rotate');
     cardsRotationButtons.forEach((element) => element.classList.remove('hidden'));
   }
+  drawWordCards();
 }
 
 function playMode() {

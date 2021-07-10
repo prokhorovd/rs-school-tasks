@@ -2,7 +2,7 @@
 import { cardsList } from '../../appSettings';
 import { generateWordCard } from './wordCard';
 
-export function generateWordCards(categoryNumber: number, rootElement: HTMLElement | null) {
+export function generateWordCards(categoryNumber: number, rootElement: HTMLElement | null): void {
   for (let i = 0; i < cardsList[categoryNumber].length; i++) {
     const newlyGenCard = generateWordCard(cardsList[categoryNumber][i]);
     rootElement?.appendChild(newlyGenCard);
