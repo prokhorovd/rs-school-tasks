@@ -1,0 +1,29 @@
+.win-screen,
+.lose-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.win-screen__icon,
+.lose-screen__icon {
+  height: 280px;
+  width: 280px;
+}
+
+.win-screen__icon {
+  background: url("../../../public/img/win.svg") center no-repeat;
+  background-size: contain;
+}
+
+.lose-screen__icon {
+  background: url("../../../public/img/lose.svg") center no-repeat;
+  background-size: contain;
+}
+
+.win-screen__text,
+.lose-screen__text {
+  font-size: 30px;
+}
+

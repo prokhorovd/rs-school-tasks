@@ -2,6 +2,7 @@ import { cardsList, categoriesList, gameData } from '../../appSettings';
 // import { drawWordCards } from '../../routing';
 import { BaseComponent } from '../baseComponent';
 import { generateWordCards } from '../wordCards/wordCards';
+import './game.css';
 
 export const sayWord = (): void => {
   const currentCard = gameData.shuffledCardsOrder[gameData.currentStep];
@@ -14,6 +15,26 @@ const nextCard = () => {
   sayWord();
 };
 
+const renderWinScreen = (): HTMLElement => {
+  const winScreen = new BaseComponent('div', ['win-screen']);
+  const winIcon = new BaseComponent('div', ['win-screen__icon']);
+  const winText = new BaseComponent('div', ['win-screen__text']);
+  winText.element.innerText = 'Good job! There were no mistakes';
+  winScreen.element.appendChild(winIcon.render());
+  winScreen.element.appendChild(winText.render());
+  return winScreen.render();
+};
+
+const renderLoseScreen = (mistakesCounter: number): HTMLElement => {
+  const loseScreen = new BaseComponent('div', ['lose-screen']);
+  const loseIcon = new BaseComponent('div', ['lose-screen__icon']);
+  const loseText = new BaseComponent('div', ['lose-screen__text']);
+  loseText.element.innerText = `You lost, try again! You were made ${mistakesCounter} mistakes`;
+  loseScreen.element.appendChild(loseIcon.render());
+  loseScreen.element.appendChild(loseText.render());
+  return loseScreen.render();
+};
+
 // todo end game screen (success or not)
 const endGame = (): void => {
   const gameField = document.querySelector('.card-field') as HTMLElement;
@@ -21,13 +42,15 @@ const endGame = (): void => {
   if (gameData.mistakesCounter === 0) {
     const winSound = new Audio('./audio/success.mp3');
     winSound.play();
-    resultScreen.element.innerText = 'success, there were no mistakes';
+    // resultScreen.element.innerText = 'success, there were no mistakes';
     // console.log('success');
+    resultScreen.element.appendChild(renderWinScreen());
   } else {
     // console.log('failure');
     const loseSound = new Audio('./audio/failure.mp3');
     loseSound.play();
-    resultScreen.element.innerText = `failure, there was/were ${gameData.mistakesCounter} mistakes`;
+    // resultScreen.element.innerText = `failure, there was/were ${gameData.mistakesCounter} mistakes`;
+    resultScreen.element.appendChild(renderLoseScreen(gameData.mistakesCounter));
     // console.log(`there was/were ${gameData.mistakesCounter} mistakes`);
   }
   gameField.innerHTML = '';
@@ -61,6 +84,8 @@ const checkCard = (id: string) => {
     gameData.guessCounter += 1;
     const guessedCard = document.getElementById(id) as HTMLElement;
     guessedCard.classList.add('guessed');
+    const greenFilter = new BaseComponent('div', ['guessed-div']);
+    guessedCard.children[0].appendChild(greenFilter.render());
     // console.log(guessedCard);
     // const cardId = guessedCard.id;
     // guessedCard.removeEventListener('click', () => checkCard(cardId));
