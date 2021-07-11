@@ -3,7 +3,7 @@ import { cardsList, categoriesList, gameData } from '../../appSettings';
 import { BaseComponent } from '../baseComponent';
 import { generateWordCards } from '../wordCards/wordCards';
 import './game.css';
-import {updateCorrectCounter, updateErrorCounter} from "../stats/stats";
+import { updateCorrectCounter, updateErrorCounter } from '../stats/stats';
 
 export const sayWord = (): void => {
   const currentCard = gameData.shuffledCardsOrder[gameData.currentStep];

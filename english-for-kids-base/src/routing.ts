@@ -3,7 +3,7 @@ import { categoriesList } from './appSettings';
 import { generateWordCards } from './components/wordCards/wordCards';
 import { resetGame } from './components/game/game';
 import { BaseComponent } from './components/baseComponent';
-import {createTable} from "./components/stats/stats";
+import { createTable, tableButtons } from './components/stats/stats';
 
 export const drawWordCards = (): void => {
   const cardField = document.querySelector('.card-field') as HTMLElement;
@@ -38,6 +38,8 @@ export function setRouting(rootElement: Window): void {
     const restartButton = document.querySelector('.btn-repeat') as HTMLElement;
     restartButton.classList.add('hidden');
     if (window.location.hash === '#main') {
+      const tableButtonsSpan = document.querySelector('.table-button-wrapper') as HTMLElement;
+      tableButtonsSpan?.remove();
       // console.log('main page');
       const rowCardWrapper = new BaseComponent('div', ['card-field__row', 'row', 'justify-content-around']);
       cardField.innerHTML = '';
@@ -49,7 +51,15 @@ export function setRouting(rootElement: Window): void {
       cardField.innerHTML = '';
       pageHeading.innerText = 'Statistics';
       cardField.appendChild(createTable());
+      const controlPanel = document.querySelector('.control-panel') as HTMLElement;
+      controlPanel.appendChild(tableButtons());
+      const playBtn = document.querySelector('.btn-play') as HTMLElement;
+      playBtn?.classList.add('hidden');
+      const pointsPanel = document.querySelector('.control-panel__points') as HTMLElement;
+      pointsPanel?.classList.add('hidden');
     } else {
+      const tableButtonsSpan = document.querySelector('.table-button-wrapper') as HTMLElement;
+      tableButtonsSpan?.remove();
       // cardField.innerHTML = '';
       // // перебираем через список категорий
       // for (let i = 0; i < categoriesList.length; i++) {

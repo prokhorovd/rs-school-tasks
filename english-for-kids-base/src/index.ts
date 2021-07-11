@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.scss';
 import { App } from './app';
 import { setRouting } from './routing';
-import { createStatisticsBase, createTable } from './components/stats/stats';
+import { createStatisticsBase, createTable, sortTable } from './components/stats/stats';
 
 // console.log('Project initiated');
 
@@ -14,4 +14,6 @@ window.onload = () => {
   createStatisticsBase();
   // todo del test section below
   // document.body.appendChild(createTable());
+  // sortTable('categoryNumber');
+  // sortTable('translation');
 };

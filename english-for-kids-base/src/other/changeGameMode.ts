@@ -16,8 +16,6 @@ export function changeGameMode(): void {
 }
 
 function trainMode() {
-  // const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
-  // changeModeButton.innerText = 'Train Mode is active';
   document.body.classList.remove('body_play');
   document.body.classList.add('body_train');
   const playButton = document.querySelector('.btn-play') as HTMLElement;
@@ -27,12 +25,14 @@ function trainMode() {
   restartButton.classList.add('hidden');
   pointsPanel.classList.add('hidden');
   // show card controls
-  if (window.location.hash !== '#main') {
+  if (window.location.hash !== '#main' && window.location.hash !== '#stats') {
     const cardsDescriptionFields = document.querySelectorAll('.card__text');
     cardsDescriptionFields.forEach((element) => element.classList.remove('hidden'));
     const cardsRotationButtons = document.querySelectorAll('.card__rotate');
     cardsRotationButtons.forEach((element) => element.classList.remove('hidden'));
     drawWordCards();
+  } else if (window.location.hash === '#stats') {
+    console.log('its stats');
   } else {
     const rowCardWrapper = new BaseComponent('div', ['card-field__row', 'row', 'justify-content-around']);
     generateCategoryCards(categoriesList, rowCardWrapper.element);
@@ -56,7 +56,7 @@ function playMode() {
   // restartButton.classList.remove('hidden');
   // pointsPanel.classList.remove('hidden');
   // remove controls from cards
-  if (window.location.hash !== '#main') {
+  if (window.location.hash !== '#main' && window.location.hash !== '#stats') {
     playButton.classList.remove('hidden');
     // restartButton.classList.remove('hidden');
     pointsPanel.classList.remove('hidden');

@@ -1,6 +1,6 @@
 import { BaseComponent } from '../baseComponent';
-import {Card, gameData, settings} from '../../appSettings';
-import {updateClickCounter} from "../stats/stats";
+import { Card, gameData, settings } from '../../appSettings';
+import { updateClickCounter } from '../stats/stats';
 
 function flipCard(id: string) {
   console.log('flip card initiated for ', id);
