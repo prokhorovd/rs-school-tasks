@@ -1,7 +1,8 @@
 .control-panel {
   display: flex;
   align-items: center;
-  height: 35px;
+  justify-content: space-between;
+  /*height: 35px;*/
 }
 
 .control-panel__heading {
@@ -22,7 +23,9 @@
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
-  width: 600px;
+  width: 50vw;
+  /*height: 10px;*/
+  /*background: #2196F3;*/
 }
 
 .point-star {
@@ -40,4 +43,21 @@
 .point-star-false {
   background: url("../../../public/img/star.svg") center no-repeat;
   background-size: contain;
+}
+
+@media screen and (max-width: 460px) {
+  .control-panel {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    /*flex-wrap: wrap;*/
+  }
+
+  .control-panel__heading {
+    margin: 0;
+  }
+
+  .control-panel__points {
+    height: 30px;
+  }
 }
