@@ -27,9 +27,7 @@
 }
 
 .card-field {
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*justify-content: space-evenly;*/
+  min-height: 80vh;
 }
 
 .card__item {
