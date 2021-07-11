@@ -11,6 +11,7 @@ export class App extends BaseComponent {
 
   render(): HTMLElement {
     // this.rootElement?.appendChild(this.element);
+    this.rootElement?.classList.add('body_train');
     this.rootElement?.appendChild(new Header(document.body).render());
     const main = new BaseComponent('main', ['main']);
     main.element.appendChild(new ControlPanel(document.body).render());

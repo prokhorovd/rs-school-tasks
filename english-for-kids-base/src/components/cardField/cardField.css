@@ -4,6 +4,7 @@
   width: 18rem;
   margin: 15px;
   transition: 0.3s;
+  border-radius: 15px;
 }
 
 .category-card:hover {
@@ -11,7 +12,8 @@
 }
 
 .category-card__img {
-  /*max-height: 150px;*/
+  margin-top: 5px;
+  border-radius: 15px;
 }
 
 .category-card__link {
@@ -24,6 +26,16 @@
   display: inline-block;
   width: 270px;
   height: 230px;
+  transition: 0.3s;
+  margin: 10px;
+  border-radius: 15px;
+  padding: 0;
+  /*background-color: rgba(94, 156, 229, 0.3);*/
+  border: none;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
 }
 
 .card-field {
@@ -49,6 +61,7 @@
   height: 100%;
   background-size: contain;
   backface-visibility: hidden;
+  border-radius: 15px;
 }
 
 .card__back {
@@ -62,7 +75,9 @@
 /*}*/
 
 .card__text {
-  background-color: whitesmoke;
+  background-color: white;
+  text-align: center;
+  font-size: 18px;
 }
 
 .card__rotate {
@@ -73,8 +88,8 @@
   background-color: #fff;
   width: 35px;
   height: 35px;
-  bottom: 0;
-  right: 0;
+  bottom: 5px;
+  right: 5px;
   border-radius: 30%;
 }
 
@@ -90,4 +105,5 @@
   background: green;
   height: 100%;
   opacity: 0.5;
+  border-radius: 15px;
 }

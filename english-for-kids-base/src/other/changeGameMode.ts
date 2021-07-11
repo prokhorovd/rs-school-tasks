@@ -18,6 +18,8 @@ export function changeGameMode(): void {
 function trainMode() {
   // const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
   // changeModeButton.innerText = 'Train Mode is active';
+  document.body.classList.remove('body_play');
+  document.body.classList.add('body_train');
   const playButton = document.querySelector('.btn-play') as HTMLElement;
   const restartButton = document.querySelector('.btn-repeat') as HTMLElement;
   const pointsPanel = document.querySelector('.control-panel__points') as HTMLElement;
@@ -42,6 +44,8 @@ function trainMode() {
 }
 
 function playMode() {
+  document.body.classList.remove('body_train');
+  document.body.classList.add('body_play');
   // const changeModeButton = document.querySelector('.btn-change-mode') as HTMLElement;
   // changeModeButton.innerText = 'Play Mode is active';
   // show game control buttons

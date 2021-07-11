@@ -33,11 +33,7 @@ export class ControlPanel extends BaseComponent {
     const restartBtn = new BaseComponent('button', ['btn', 'btn-repeat']);
     restartBtn.element.innerText = 'Repeat';
     restartBtn.element.classList.add('hidden');
-    restartBtn.element.addEventListener('click', () => {
-      // resetGame();
-      // startGame();
-      sayWord();
-    });
+    restartBtn.element.addEventListener('click', sayWord);
     this.element.appendChild(playBtn.render());
     this.element.appendChild(restartBtn.render());
     // game points field
