@@ -30,12 +30,12 @@
 .btn-play:hover,
 .btn-repeat:hover {
   /*transform: scaleX(1.1);*/
-  background-color: rgba(144, 238, 144, 0.2);
+  /*background-color: rgba(144, 238, 144, 0.2);*/
   border: 2px solid rgba(0,0,0, 0.2);
 }
 
 .btn-play {
-  width: 70px;
+  width: 120px;
   background: url("../../../public/img/btn-play.svg") left no-repeat;
   background-size: 25px;
 }

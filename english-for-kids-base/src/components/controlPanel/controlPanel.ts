@@ -27,7 +27,7 @@ export class ControlPanel extends BaseComponent {
     this.element.appendChild(pageName.render());
     // play/restart buttons
     const playBtn = new BaseComponent('button', ['btn', 'btn-play']);
-    playBtn.element.innerText = 'Play';
+    playBtn.element.innerText = 'Start game';
     playBtn.element.classList.add('hidden');
     playBtn.element.addEventListener('click', startGame);
     const restartBtn = new BaseComponent('button', ['btn', 'btn-repeat']);
