@@ -3,6 +3,7 @@ import { categoriesList } from './appSettings';
 import { generateWordCards } from './components/wordCards/wordCards';
 import { resetGame } from './components/game/game';
 import { BaseComponent } from './components/baseComponent';
+import {createTable} from "./components/stats/stats";
 
 export const drawWordCards = (): void => {
   const cardField = document.querySelector('.card-field') as HTMLElement;
@@ -44,6 +45,10 @@ export function setRouting(rootElement: Window): void {
       // generateCategoryCards(categoriesList, cardField);
       generateCategoryCards(categoriesList, rowCardWrapper.element);
       cardField.appendChild(rowCardWrapper.render());
+    } else if (window.location.hash === '#stats') {
+      cardField.innerHTML = '';
+      pageHeading.innerText = 'Statistics';
+      cardField.appendChild(createTable());
     } else {
       // cardField.innerHTML = '';
       // // перебираем через список категорий

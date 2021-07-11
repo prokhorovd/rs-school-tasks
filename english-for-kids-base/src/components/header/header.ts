@@ -46,7 +46,6 @@ export class Header extends BaseComponent {
     navigationCloseBtn.element.addEventListener('click', closeSidebar);
     navigationList.element.appendChild(navigationCloseBtn.render());
     const mainMenuItem = createMenuList('Main Page', '#main');
-    // todo add active status
     navigationList.element.appendChild(mainMenuItem);
     // create menu items using data from appSettings.ts
     for (let i = 0; i < categoriesList.length; i++) {
@@ -57,6 +56,8 @@ export class Header extends BaseComponent {
     const navigationOverlay = new BaseComponent('div', ['sidebar-menu__overlay']);
     navigationOverlay.element.addEventListener('click', closeSidebar);
     navigation.element.appendChild(navigationOverlay.render());
+    const statsMenuItem = createMenuList('Statistics', '#stats');
+    navigationList.element.appendChild(statsMenuItem);
     // open menu button
     const navigationOpenBtn = new BaseComponent('button', ['btn', 'btn-menu', 'btn-menu-open']);
     navigationOpenBtn.element.setAttribute('id', 'sidebar-menu__btn-open');

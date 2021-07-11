@@ -3,6 +3,7 @@ import { cardsList, categoriesList, gameData } from '../../appSettings';
 import { BaseComponent } from '../baseComponent';
 import { generateWordCards } from '../wordCards/wordCards';
 import './game.css';
+import {updateCorrectCounter, updateErrorCounter} from "../stats/stats";
 
 export const sayWord = (): void => {
   const currentCard = gameData.shuffledCardsOrder[gameData.currentStep];
@@ -82,6 +83,7 @@ const checkCard = (id: string) => {
   if (id === cardsList[gameData.currentCategory][currentCard].word) {
     // console.log('match');
     gameData.guessCounter += 1;
+    updateCorrectCounter(id, categoriesList[gameData.currentCategory].link);
     const guessedCard = document.getElementById(id) as HTMLElement;
     guessedCard.classList.add('guessed');
     const greenFilter = new BaseComponent('div', ['guessed-div']);
@@ -104,6 +106,8 @@ const checkCard = (id: string) => {
   } else {
     // console.log('mistake');
     gameData.mistakesCounter += 1;
+    const mistakenCard = cardsList[gameData.currentCategory][currentCard].word;
+    updateErrorCounter(mistakenCard, categoriesList[gameData.currentCategory].link);
     // sound of error
     const errorSound = new Audio('./audio/error.mp3');
     errorSound.play();

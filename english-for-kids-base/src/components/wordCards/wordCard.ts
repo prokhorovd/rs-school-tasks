@@ -1,5 +1,6 @@
 import { BaseComponent } from '../baseComponent';
-import { Card, settings } from '../../appSettings';
+import {Card, gameData, settings} from '../../appSettings';
+import {updateClickCounter} from "../stats/stats";
 
 function flipCard(id: string) {
   console.log('flip card initiated for ', id);
@@ -32,7 +33,12 @@ export function generateWordCard(card: Card): HTMLElement {
   cardItem.element.setAttribute('id', `${card.word}`);
   const cardFront = new BaseComponent('div', ['card__front']);
   // click listener for audio play
-  cardFront.element.addEventListener('click', () => playWord(card.audioSrc));
+  cardFront.element.addEventListener('click', () => {
+    playWord(card.audioSrc);
+    if (settings.gameMode === 'train') {
+      updateClickCounter(card.word, window.location.hash);
+    }
+  });
   const cardBack = new BaseComponent('div', ['card__back']);
   // front text
   const cardFrontText = new BaseComponent('div', ['card__text']);
