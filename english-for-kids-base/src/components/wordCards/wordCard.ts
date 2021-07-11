@@ -2,6 +2,7 @@ import { BaseComponent } from '../baseComponent';
 import { Card, settings } from '../../appSettings';
 
 function flipCard(id: string) {
+  console.log('flip card initiated for ', id);
   const cardElement = document.getElementById(id) as HTMLElement;
   const rotateButton = document.getElementById(`${id}-rotate`) as HTMLElement;
   cardElement.classList.add('flip');
@@ -39,7 +40,7 @@ export function generateWordCard(card: Card): HTMLElement {
   if (settings.gameMode === 'play') {
     cardFrontText.element.classList.add('hidden');
   }
-  cardFront.element.setAttribute('style', `background-image: url(./${card.image})`);
+  cardFront.element.setAttribute('style', `background: url(./${card.image}) center no-repeat`);
   cardFront.element.appendChild(cardFrontText.render());
   // back text
   const cardBackText = new BaseComponent('div', ['card__text']);
@@ -47,7 +48,7 @@ export function generateWordCard(card: Card): HTMLElement {
   if (settings.gameMode === 'play') {
     cardBackText.element.classList.add('hidden');
   }
-  cardBack.element.setAttribute('style', `background-image: url(./${card.image})`);
+  cardBack.element.setAttribute('style', `background: url(./${card.image}) center no-repeat`);
   cardBack.element.appendChild(cardBackText.render());
   // rotate button
   const cardRotateButton = new BaseComponent('div', ['card__rotate']);

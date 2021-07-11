@@ -1,12 +1,12 @@
 header {
   display: flex;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
   background-color: bisque;
 }
 
 .sidebar-menu {
-  position: absolute;
-  left: 0;
+  /*position: absolute;*/
+  /*left: 0;*/
 }
 
 .sidebar-menu__list {
@@ -32,6 +32,29 @@ header {
 
 .btn-menu {
   justify-self: flex-start;
+  font-weight: bold;
+  font-size: large;
+  /*background: url("../../../public/menu-icon.png") center no-repeat;*/
+  height: 35px;
+  /*margin-left: 200px;*/
+}
+
+.btn-menu-open {
+  background: url("../../../public/menu-open.png") center no-repeat;
+  background-size: contain;
+  margin: 0 30px 0 200px;
+  /*margin-left: 200px;*/
+}
+
+.btn-menu-close {
+  background: url("../../../public/menu-close.png") center no-repeat;
+  background-size: contain;
+  margin-left: 220px;
+  margin-top: 15px;
+}
+
+.site-title {
+  font-size: 25px;
 }
 
 .active {
@@ -45,10 +68,12 @@ header {
 
 /*game mode switch*/
 .game-mode-switch {
-  position: relative;
+  position: absolute;
+  margin: 0 30px;
   display: inline-block;
   width: 90px;
   height: 34px;
+  right: 20px;
 }
 
 .game-mode-switch input {display:none;}
@@ -93,11 +118,10 @@ header {
   transform: translateX(55px);
 }
 
-/*------ ADDED CSS ---------*/
-.play
-{
-  display: none;
-}
+/*.play*/
+/*{*/
+/*  display: none;*/
+/*}*/
 
 .play, .train
 {
@@ -105,9 +129,18 @@ header {
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
-  left: 50%;
-  font-size: 10px;
-  font-family: Verdana, sans-serif;
+  /*left: 50%;*/
+  font-size: 14px;
+  /*font-family: Verdana, sans-serif;*/
+}
+
+.play {
+  display: none;
+  left: 30%
+}
+
+.train {
+  left: 70%
 }
 
 .game-mode-switch__input:checked + .game-mode-switch__slider .play {

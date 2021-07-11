@@ -4,6 +4,7 @@ import { categoriesList } from '../../appSettings';
 import { changeGameMode } from '../../other/changeGameMode';
 
 function openSidebar(): void {
+  document.body.style.overflow = 'hidden';
   const sidebarMenu = document.querySelector('.sidebar-menu__list') as HTMLElement;
   const sidebarMenuOverlay = document.querySelector('.sidebar-menu__overlay') as HTMLElement;
   sidebarMenu.style.width = '300px';
@@ -11,6 +12,7 @@ function openSidebar(): void {
 }
 
 function closeSidebar(): void {
+  document.body.style.overflow = '';
   const sidebarMenu = document.querySelector('.sidebar-menu__list') as HTMLElement;
   const sidebarMenuOverlay = document.querySelector('.sidebar-menu__overlay') as HTMLElement;
   sidebarMenu.style.width = '0';
@@ -23,6 +25,9 @@ function createMenuList(categoryName: string, link: string): HTMLElement {
   const newMenuItem = new BaseComponent('li', ['nav-item', 'sidebar-menu__item']);
   const newMenuItemLink = new BaseComponent('a', ['nav-link']);
   newMenuItemLink.element.setAttribute('href', `${link}`);
+  if (link === window.location.hash) {
+    newMenuItemLink.element.classList.add('active');
+  }
   newMenuItemLink.element.innerText = `${categoryName}`;
   newMenuItemLink.element.addEventListener('click', () => closeSidebar());
   newMenuItem.element.appendChild(newMenuItemLink.render());
@@ -35,12 +40,13 @@ export class Header extends BaseComponent {
     // sidebar navigation menu
     const navigation = new BaseComponent('nav', ['sidebar-menu']);
     const navigationList = new BaseComponent('ul', ['sidebar-menu__list', 'nav', 'flex-column']);
-    const navigationCloseBtn = new BaseComponent('button', ['btn', 'btn-menu']);
+    const navigationCloseBtn = new BaseComponent('button', ['btn', 'btn-menu', 'btn-menu-close']);
     navigationCloseBtn.element.setAttribute('id', 'sidebar-menu__btn-close');
-    navigationCloseBtn.element.innerText = 'Close Menu';
+    // navigationCloseBtn.element.innerText = 'Close Menu';
     navigationCloseBtn.element.addEventListener('click', closeSidebar);
     navigationList.element.appendChild(navigationCloseBtn.render());
     const mainMenuItem = createMenuList('Main Page', '#main');
+    // todo add active status
     navigationList.element.appendChild(mainMenuItem);
     // create menu items using data from appSettings.ts
     for (let i = 0; i < categoriesList.length; i++) {
@@ -52,17 +58,16 @@ export class Header extends BaseComponent {
     navigationOverlay.element.addEventListener('click', closeSidebar);
     navigation.element.appendChild(navigationOverlay.render());
     // open menu button
-    const navigationOpenBtn = new BaseComponent('button', ['btn', 'btn-menu']);
+    const navigationOpenBtn = new BaseComponent('button', ['btn', 'btn-menu', 'btn-menu-open']);
     navigationOpenBtn.element.setAttribute('id', 'sidebar-menu__btn-open');
-    navigationOpenBtn.element.innerText = 'Menu';
+    // navigationOpenBtn.element.innerText = 'Menu';
     navigationOpenBtn.element.addEventListener('click', openSidebar);
     navigation.element.appendChild(navigationOpenBtn.render());
     this.element.appendChild(navigation.render());
-    // change app mode button obsolete todo delete
-    // const changeModeBtn = new BaseComponent('button', ['btn', 'btn-change-mode']);
-    // changeModeBtn.element.innerText = 'Train Mode is active';
-    // changeModeBtn.element.addEventListener('click', changeGameMode);
-    // this.element.appendChild(changeModeBtn.render());
+    // site title
+    const siteTitle = new BaseComponent('div', ['site-title']);
+    siteTitle.element.innerText = 'English For Kids';
+    this.element.appendChild(siteTitle.render());
     // change app mode switcher
     const changeModeSliderSwitch = new BaseComponent('label', ['game-mode-switch']);
     const changeModeSliderInput = new BaseComponent('input', ['game-mode-switch__input']);

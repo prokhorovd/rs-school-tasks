@@ -1,8 +1,8 @@
-import {categoriesList, settings} from '../appSettings';
+import { categoriesList, settings } from '../appSettings';
 import { resetGame } from '../components/game/game';
 import { drawWordCards } from '../routing';
-import {generateCategoryCards} from "../components/categoryCards/categoryCards";
-import {BaseComponent} from "../components/baseComponent";
+import { generateCategoryCards } from '../components/categoryCards/categoryCards';
+import { BaseComponent } from '../components/baseComponent';
 
 export function changeGameMode(): void {
   if (settings.gameMode === 'train') {
@@ -35,6 +35,7 @@ function trainMode() {
     const rowCardWrapper = new BaseComponent('div', ['card-field__row', 'row', 'justify-content-around']);
     generateCategoryCards(categoriesList, rowCardWrapper.element);
     const cardField = document.querySelector('.card-field') as HTMLElement;
+    cardField.innerHTML = '';
     cardField.appendChild(rowCardWrapper.render());
   }
   // drawWordCards();
