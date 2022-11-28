@@ -1,4 +1,19 @@
 # Photo filter 
+### Application for applying css filters to images (existing or uploaded). (April 2021)
+
+Deploy: https://rolling-scopes-school.github.io/prokhorovd-JSFE2021Q1/photo-filter/
+
+### Tools and technologies:
+JavaScript, css-filters.
+
+### About:
+- Few css filters can be applied to an image: blur, invert, saturate, sepia, hue rotate, intensivity;
+- Starting image is always the same. Users also can use images from build-in library (links to images were provided);
+- `Next picture` button will load different pictures depending on time of the day. 6:00 - 11:59 morning pictures, 12:00 - 17:59 day pictures, 18:00 - 23:59 evening pictures and 00:00 - 5:59 night pictures. Images will be loaded from external github library.
+- User can upload images using `Load picture` button. User can apply filters to an image and download modified version;
+- App can be used in full-screen mode;
+
+___
 ### Приложение для применения фильтров к уже существующим или загруженным фотографиям (Апрель 2021)
 
 Deploy: https://rolling-scopes-school.github.io/prokhorovd-JSFE2021Q1/photo-filter/
