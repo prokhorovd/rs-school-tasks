@@ -1,4 +1,44 @@
 # English for kids
+### English for kids - an application for learning English words for kids. (July 2021)
+Deploy: https://prokhorovd-english-for-kids.netlify.app/
+
+### Tools and technologies: 
+SPA, Typescript, adaptive layout, webpack, eslint + eslint-config-airbnb-base. Project was implemented module by module, localStorage was used as data storage, app was developed for and tested for Google Chrome.
+
+### App features
+- Main page
+  - there are links to the pages with categories of words;
+  - on the main page and category pages of the application, there is a Train / Play switch button;
+- Category Page
+  - category page includes category name and word cards related to category theme
+  - each card has a thematic picture and an English word
+  - each card has a button on the right bottom corner. When you click on the button, the card flips over. The back side of the card has a translation of the word. Clicking on the back side of the card does not trigger any events like the pronunciation of the word. A card is rotated back to the front side when the mouse cursor moves beyond the borders of the card;
+- Statistics Page
+  - statistics page contains a list of all categories, all words in each category, and a translation of each word;
+  - statistics are displayed next to each word - how many times a card with a given word was clicked in training mode, how many times this word was guessed in game mode, how many mistakes were made, the percentage of correct answers for each word in game mode. After restarting the application, statistics are saved;
+  - it is possible to sort the data alphabetically, for numerical data - by their value;
+  - the "Reset" button resets statistics.
+
+### Game modes description
+- Training mode (default):
+  - when you click on the card, the word is pronounced in English;
+  - each card has a button on the right bottom corner. When you click on that button the card flips over. The back side of the card has a translation of the word. A card is rotated back to the front side when the mouse cursor moves beyond the borders of the card;
+- Game mode:
+  - mode is activated by toggling the Train/Play switch button. Features of Training mode are disabled for the game mode, the "Start game" button is displayed;
+  - after clicking on the "Start game" button, the random word from those on the page is pronounced. For each page, and for each game, random words are generated anew;
+  - after the first click on the "Start game" button, the button changes to the "Repeat" icon. When you click on the "Repeat" button, the word is pronounced again;
+  - when the game is over the “success” screen will be shown, if all words are guessed correctly. Else, if there were errors while guessing the words, the “failure” screen will be shown with the number of mistakes. Afterward, the application automatically redirects to the main page with a list of categories;
+
+  ### How to use:
+- clone this repo;
+- `npm i` to install dependencies;
+- available scripts:
+  - `npm run build` will build project in ./dist folder;
+  - `npm run dev` will run dev-server;
+  - `npm run lint` to check project for linter errors;
+
+___
+
 ### Приложение для изучения английских слов детьми (Июль 2021)
 Deploy: https://prokhorovd-english-for-kids.netlify.app/
 
